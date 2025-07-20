@@ -28,7 +28,7 @@ Built on the robust **yt-dlp** backend, VideoMate supports downloading from **10
 VideoMate is available in two ways:
 
 ### 1. Official Releases (Recommended)
-Download the latest APK from our [GitHub Releases page](https://github.com/yourusername/VideoMate/releases)
+Download the latest APK from our GitHub Releases page [Download Now](https://github.com/shibaFoss/VideoMate/releases/download/20250510/AIO_version_20250510.apk)
 
 ### 2. Build from Source
 For developers who want to build the app themselves:
