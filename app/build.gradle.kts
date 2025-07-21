@@ -203,6 +203,7 @@ dependencies {
     implementation(libs.androidx.viewpager2)
     implementation(libs.circle.imageview)
     implementation(libs.circle.progressbar)
+    implementation(libs.androidx.webkit)
 
     // Utility and helper libraries
     implementation(libs.saf.storage)
@@ -212,4 +213,18 @@ dependencies {
 
     // Networking (e.g., OkHttp)
     implementation(libs.okhttp.connection)
+    implementation( libs.jsoup)
+
+    //Youtube-dl android wrapper
+    implementation(libs.ytdlp.library)
+    implementation(libs.ytdlp.ffmpeg)
+
+    //Android native media player
+    implementation(libs.media3.exoplayer)
+    implementation(libs.media3.exoplayer.hls)
+    implementation(libs.media3.exoplayer.dash)
+    implementation(libs.media3.datasource)
+    implementation(libs.media3.ui)
+    implementation(libs.media3.session)
+
 }
