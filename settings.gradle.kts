@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Tube AIO+"
+rootProject.name = "VideoMate Pro"
 include(":app")
