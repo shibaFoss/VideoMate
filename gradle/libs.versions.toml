@@ -1,22 +1,70 @@
+# Version Catalog Configuration
+# This file centralizes all dependency versions and declarations for the project
+
 [versions]
+# Android Gradle Plugin version
 agp = "8.11.1"
-kotlin = "2.0.21"
-coreKtx = "1.10.1"
-junit = "4.13.2"
-junitVersion = "1.1.5"
-espressoCore = "3.5.1"
-appcompat = "1.6.1"
-material = "1.10.0"
+# Kotlin language version
+kotlin = "2.1.0"
+
+# AndroidX Core KTX version
+coreKtx = "1.16.0"
+# AppCompat library version
+appcompat = "1.7.1"
+
+# UI Component versions
+circle_progressbar = "1.4.1"
+androidx_viewpager2 = "1.1.0"
+androidx_cardview = "1.0.0"
+circleimageview = "3.1.0"
+
+# Coroutine versions
+kotlin_coroutine = "1.10.1"
+
+# Lifecycle components
+lifecycle_process = "2.9.1"
+
+# Utility library versions
+storage_helper = "2.0.0"
+permissionx = "1.8.1"
+lottie_animation = "6.6.4"
+glide_image_loader = "4.16.0"
+
+# Networking
+okhttp = "4.12.0"
 
 [libraries]
+# Core AndroidX libraries
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+# Coroutine libraries
+kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlin_coroutine" }
+kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin_coroutine" }
+
+# Lifecycle components
+androidx-lifecycle-process = { group = "androidx.lifecycle", name = "lifecycle-process", version.ref = "lifecycle_process" }
+
+# UI Components
+circle-progressbar = { module = "io.github.dinuscxj:circleprogressbar", version.ref = "circle_progressbar" }
+androidx-viewpager2 = { group = "androidx.viewpager2", name = "viewpager2", version.ref = "androidx_viewpager2" }
+androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "androidx_cardview" }
+circle-imageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
+
+# Utility Libraries
+saf-storage = { module = "com.anggrayudi:storage", version.ref = "storage_helper" }
+permissionx = { module = "com.guolindev.permissionx:permissionx", version.ref = "permissionx" }
+lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie_animation" }
+
+# Image Loading
+glide-image-loader = { module = "com.github.bumptech.glide:glide", version.ref = "glide_image_loader" }
+
+# Networking
+okhttp-connection = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 
 [plugins]
+# Android Gradle Plugin
 android-application = { id = "com.android.application", version.ref = "agp" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
+# Kotlin Android Plugin
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
