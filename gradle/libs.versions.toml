@@ -5,7 +5,8 @@
 # Android Gradle Plugin version
 agp = "8.11.1"
 # Kotlin language version
-kotlin = "2.1.0"
+gradle = "8.11.1"
+kotlin = "2.2.0"
 
 # AndroidX Core KTX version
 coreKtx = "1.16.0"
@@ -19,19 +20,20 @@ androidx_cardview = "1.0.0"
 circleimageview = "3.1.0"
 
 # Coroutine versions
-kotlin_coroutine = "1.10.1"
+kotlin_coroutine = "1.10.2"
 
 # Lifecycle components
-lifecycle_process = "2.9.1"
+lifecycle_process = "2.9.2"
 
 # Utility library versions
-storage_helper = "2.0.0"
+objectboxGradlePlugin = "4.3.0"
+storage_helper = "2.1.0"
 permissionx = "1.8.1"
-lottie_animation = "6.6.4"
+lottie_animation = "6.6.7"
 glide_image_loader = "4.16.0"
 
 # Networking
-okhttp = "4.12.0"
+okhttp = "5.1.0"
 
 [libraries]
 # Core AndroidX libraries
@@ -39,6 +41,7 @@ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = 
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 
 # Coroutine libraries
+gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlin_coroutine" }
 kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin_coroutine" }
 
@@ -52,6 +55,7 @@ androidx-cardview = { group = "androidx.cardview", name = "cardview", version.re
 circle-imageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
 
 # Utility Libraries
+objectbox-gradle-plugin = { module = "io.objectbox:objectbox-gradle-plugin", version.ref = "objectboxGradlePlugin" }
 saf-storage = { module = "com.anggrayudi:storage", version.ref = "storage_helper" }
 permissionx = { module = "com.guolindev.permissionx:permissionx", version.ref = "permissionx" }
 lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie_animation" }

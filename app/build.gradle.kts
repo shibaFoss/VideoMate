@@ -2,133 +2,151 @@
 
 /**
  * Module-level build configuration for the Android application.
- * Defines:
- * - Android-specific build settings
- * - Dependencies for the application module
- * - Build types and product flavors
- * - Compilation options
+ *
+ * This script defines:
+ * - Android-specific build settings (e.g., SDK versions, ABI splits)
+ * - Compiler options for Java and Kotlin
+ * - Build types and ProGuard settings
+ * - App bundle and packaging options
+ * - Dependency declarations
  */
+
 plugins {
-    // Core Android application plugin
+    // Core Android application plugin (required for Android apps)
     alias(libs.plugins.android.application)
-    // Kotlin Android support
+
+    // Kotlin Android plugin for Kotlin support
     alias(libs.plugins.kotlin.android)
-    // Kotlin Android extensions
+
+    // Kotlin Android Extensions plugin (used for synthetic views and more)
     id("kotlin-android")
-    // Kotlin annotation processing
+
+    // Kotlin Annotation Processor (needed for libraries like Room or ObjectBox)
     id("kotlin-kapt")
-    // ObjectBox database plugin
+
+    // ObjectBox plugin for database generation
     id("io.objectbox")
 }
 
-/**
- * Android-specific build configuration block.
- * Contains settings for application packaging, compilation, and runtime behavior.
- */
 android {
-    // Base package name for the application
+    // Base package name used for namespacing
     namespace = "net.base"
-    // Target SDK compilation version
+
+    // Target SDK version to compile against
     compileSdk = 36
 
     /**
      * Default configuration applied to all build variants.
      */
     defaultConfig {
-        // Unique application ID (used as the package name on Google Play)
+        // Unique application ID (used on Google Play)
         applicationId = "in.videomate"
 
-        // Minimum Android version your app supports (Android 9 / Pie)
+        // Minimum Android version supported by the app
         minSdk = 28
 
-        // Target Android version your app is tested against (Android 14)
+        // Target Android version the app is optimized for
         targetSdk = 36
 
-        // Internal version code used for updates on the Play Store
+        // Internal version code for updates
         versionCode = 250802
 
         // Human-readable version name shown to users
         versionName = "25.08.01"
 
-        // Enable support for vector drawables on older Android versions
+        // Enables support library for vector drawables
         vectorDrawables {
             useSupportLibrary = true
         }
 
-        // Specify supported native CPU architectures (for native libraries)
+        // Define supported native CPU architectures for native libraries
         ndk {
-            abiFilters.add("x86")          // Intel 32-bit (for emulators)
-            abiFilters.add("x86_64")       // Intel 64-bit (for emulators)
-            abiFilters.add("armeabi-v7a")  // ARM 32-bit (common on older devices)
-            abiFilters.add("arm64-v8a")    // ARM 64-bit (modern Android devices)
+            abiFilters.add("x86")          // Intel 32-bit (emulator)
+            abiFilters.add("x86_64")       // Intel 64-bit (emulator)
+            abiFilters.add("armeabi-v7a")  // ARM 32-bit (older devices)
+            abiFilters.add("arm64-v8a")    // ARM 64-bit (modern devices)
         }
 
-        // Enable MultiDex support for apps with more than 64K methods
+        // Enables MultiDex for apps with >64K methods
         multiDexEnabled = true
     }
 
+    /**
+     * Configure APK splits for different CPU architectures.
+     * This allows Play Store to deliver device-specific APKs, reducing size.
+     */
     splits {
         abi {
-            isEnable = true           // Enable ABI splits
-            reset()                   // Clear previous ABI configurations
-            include("x86", "x86_64", "armeabi-v7a", "arm64-v8a") // Targeted ABIs
-            isUniversalApk = true     // Generate a universal APK that includes all ABIs
+            isEnable = true                     // Enable ABI splits
+            reset()                             // Clear default ABIs
+            include("x86", "x86_64", "armeabi-v7a", "arm64-v8a") // Target ABIs
+            isUniversalApk = true               // Also generate a universal APK
         }
     }
 
-    android {
-        buildTypes {
-            release {
-                // Include full native debug symbols in the release build
-                // Useful for native crash analysis (e.g., with tools like Firebase Crashlytics)
-                ndk {
-                    debugSymbolLevel = "FULL" // Options: NONE, SYMBOL_TABLE, FULL
-                }
-            }
-        }
-
-        packaging {
-            // Exclude unnecessary license and notice files from the APK
-            // Helps reduce APK size and avoid duplicate file conflicts
-            resources {
-                excludes += setOf("META-INF/LICENSE", "META-INF/NOTICE")
-            }
-
-            jniLibs {
-                // Use legacy JNI packaging (packs all native .so libraries into the APK as before Android Gradle Plugin 4.1)
-                // Required if using libraries or setups that depend on the old structure
-                useLegacyPackaging = true
-            }
-        }
-
-        bundle {
-            // Enable screen density splits in the app bundle (AAB)
-            // Reduces app size by delivering only the required screen density resources to each device
-            density {
-                enableSplit = true
-            }
-
-            // Enable ABI splits in the app bundle (AAB)
-            // Delivers only the required native libraries for each device's CPU architecture
-            abi {
-                enableSplit = true
+    /**
+     * Native build settings specific to release builds.
+     */
+    buildTypes {
+        release {
+            // Include full native debug symbols (useful for native crash analysis)
+            ndk {
+                debugSymbolLevel = "FULL" // Options: NONE, SYMBOL_TABLE, FULL
             }
         }
     }
 
     /**
-     * Build type configurations.
+     * Controls packaging options during APK/AAB generation.
+     */
+    packaging {
+        resources {
+            // Exclude unnecessary resource files from APK
+            excludes += setOf("META-INF/LICENSE", "META-INF/NOTICE")
+        }
+
+        jniLibs {
+            // Use legacy JNI packaging (required for certain older libraries)
+            useLegacyPackaging = true
+        }
+    }
+
+    /**
+     * Configure Android App Bundle behavior.
+     * This improves delivery efficiency via Google Play Dynamic Delivery.
+     */
+    bundle {
+        // Enable screen density split for optimized asset delivery
+        density {
+            enableSplit = true
+        }
+
+        // Enable ABI split for optimized native libraries per device
+        abi {
+            enableSplit = true
+        }
+
+        // Disable language split (delivers all languages together)
+        language {
+            enableSplit = false
+        }
+    }
+
+    /**
+     * Defines additional build types and their configurations.
      */
     buildTypes {
-        // Release build configuration
         release {
-            // Enable code minification
+            // Minify code using R8/ProGuard
             isMinifyEnabled = true
-            // Enable resource shrinking
+
+            // Shrink unused resources
             isShrinkResources = true
-            // Disable debugging
+
+            // Disable debugging for release builds
             isDebuggable = false
-            // Proguard rules files
+
+            // Apply ProGuard rules for obfuscation and optimization
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -136,69 +154,58 @@ android {
         }
     }
 
-    // Control dependency metadata inclusion
+    /**
+     * Exclude dependency metadata from both APK and AAB to reduce size.
+     */
     dependenciesInfo {
         includeInBundle = false
         includeInApk = false
     }
 
     /**
-     * Java compilation options.
+     * Configure Java compiler options.
      */
     compileOptions {
-        // Source compatibility level
+        // Use Java 17 for source and target compatibility
         sourceCompatibility = JavaVersion.VERSION_17
-        // Target compatibility level
         targetCompatibility = JavaVersion.VERSION_17
-        isCoreLibraryDesugaringEnabled = true
     }
 
     /**
-     * Kotlin compilation options.
+     * Kotlin-specific compiler options.
      */
     kotlinOptions {
-        // Target JVM version
+        // JVM target version for Kotlin compiler
         jvmTarget = "17"
-    }
-
-    /**
-     * Bundle configuration for Android App Bundles.
-     */
-    bundle {
-        language {
-            // Disable language splitting (single APK for all languages)
-            enableSplit = false
-        }
     }
 }
 
 /**
- * Dependency configurations for the application module.
- * All external libraries and modules are declared here.
+ * Dependency block for managing all libraries and external modules.
  */
 dependencies {
-    // Local jar/lib dependencies
+    // Include all .jar files inside the libs/ directory
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    // Kotlin and AndroidX core libraries
+    // Kotlin and Android core libraries
     implementation(libs.androidx.core.ktx)
     implementation(libs.kotlin.coroutines.core)
     implementation(libs.kotlin.coroutines)
     implementation(libs.androidx.lifecycle.process)
 
-    // UI components
+    // Android UI libraries
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.cardview)
     implementation(libs.androidx.viewpager2)
     implementation(libs.circle.imageview)
     implementation(libs.circle.progressbar)
 
-    // Utility libraries
+    // Utility and helper libraries
     implementation(libs.saf.storage)
     implementation(libs.permissionx)
     implementation(libs.lottie)
     implementation(libs.glide.image.loader)
 
-    // Networking
+    // Networking (e.g., OkHttp)
     implementation(libs.okhttp.connection)
 }

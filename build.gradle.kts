@@ -17,9 +17,6 @@ plugins {
  * These are available for all modules in the project.
  */
 buildscript {
-    // ObjectBox database version (shared across modules)
-    val objectboxVersion by extra("4.3.0")
-
     repositories {
         // Primary repository for project dependencies
         mavenCentral()
@@ -27,9 +24,9 @@ buildscript {
 
     dependencies {
         // Android Gradle Plugin (AGP) for build tools
-        classpath("com.android.tools.build:gradle:8.11.1")
+        classpath(libs.gradle)
 
         // ObjectBox database Gradle plugin
-        classpath("io.objectbox:objectbox-gradle-plugin:$objectboxVersion")
+        classpath(libs.objectbox.gradle.plugin)
     }
 }
