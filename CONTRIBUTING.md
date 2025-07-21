@@ -70,7 +70,7 @@ After forking, clone the repository to your local machine using the following Gi
 git clone https://github.com/shibafoss/VideoMate.git
 ```
 
-Replace `your-username` with your GitHub username. This creates a local copy of the project on your machine.
+Replace `shibafoss` with your GitHub username. This creates a local copy of the project on your machine.
 
 ### 3. Open the Project in Android Studio
 
