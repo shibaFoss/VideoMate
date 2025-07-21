@@ -2,10 +2,9 @@
 <img width="" src="others/graphics/logo_full_v3.png"  width=100 height=100  align="center">
 
 # VideoMate Ultimate
+### 📥 Powerful Video/Audio Downloader for Android — Open Source, Ad-Free, and Built on yt-dlp for a Seamless, User-Centric Experience
 
 ![VideoMate Logo](others/graphics/github_project_promo_1.jpg)
-
-### 📥 Powerful Video/Audio Downloader for Android — Open Source, Ad-Free, and Built on yt-dlp for a Seamless, User-Centric Experience
 
 [![Keep a Changelog](https://img.shields.io/badge/Changelog-lightgray?style=flat&color=gray&logo=keep-a-changelog)](https://github.com/shibafoss/VideoMate/blob/main/CHANGELOG.md)
 [![GitHub all releases](https://img.shields.io/github/downloads/shibafoss/VideoMate/total?label=Downloads&logo=github)](https://github.com/shibafoss/VideoMate/releases/)
