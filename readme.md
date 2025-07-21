@@ -1,6 +1,6 @@
 # VideoMate - Open Source Video Downloader for Android
 
-![VideoMate Logo](/others/graphics/github_project_promo.jpg)
+![VideoMate Logo](others/graphics/github_project_promo.jpg)
 
 ## 📌 Introduction
 
