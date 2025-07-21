@@ -1,5 +1,5 @@
 <div align="center">
-<img width="" src="others/graphics/logo_full_v3.png"  width=100 height=100  align="center">
+<img width="" src="others/graphics/logo_full_v0.png"  width=150 height=150  align="center">
 
 # VideoMate Ultimate
 ### 📥 Powerful Video/Audio Downloader for Android — Open Source, Ad-Free, and Built on yt-dlp for a Seamless, User-Centric Experience
