@@ -1,74 +1,75 @@
+# ==========================
 # Version Catalog Configuration
-# This file centralizes all dependency versions and declarations for the project
+# ==========================
+# Centralized version and dependency management for the Android project.
+# Use this file to maintain consistency across all modules and avoid hardcoding versions.
 
 [versions]
-# Android Gradle Plugin version
-agp = "8.11.1"
-# Kotlin language version
-gradle = "8.11.1"
-kotlin = "2.2.0"
+# --- Build Tools ---
+agp = "8.11.1"                      # Android Gradle Plugin version
+gradle = "8.11.1"                   # Gradle build system version
+kotlin = "2.2.0"                    # Kotlin language version
 
-# AndroidX Core KTX version
-coreKtx = "1.16.0"
-# AppCompat library version
-appcompat = "1.7.1"
+# --- AndroidX Core ---
+coreKtx = "1.16.0"                  # AndroidX Core KTX
+appcompat = "1.7.1"                 # AndroidX AppCompat
 
-# UI Component versions
-circle_progressbar = "1.4.1"
-androidx_viewpager2 = "1.1.0"
-androidx_cardview = "1.0.0"
-circleimageview = "3.1.0"
+# --- UI Components ---
+circle_progressbar = "1.4.1"        # Circular progress bar UI widget
+androidx_viewpager2 = "1.1.0"       # ViewPager2 for swipable views
+androidx_cardview = "1.0.0"         # CardView layout container
+circleimageview = "3.1.0"           # Circular ImageView for avatars, etc.
 
-# Coroutine versions
-kotlin_coroutine = "1.10.2"
+# --- Coroutines ---
+kotlin_coroutine = "1.10.2"         # Kotlin Coroutines (core and Android)
 
-# Lifecycle components
-lifecycle_process = "2.9.2"
+# --- Lifecycle Components ---
+lifecycle_process = "2.9.2"         # Lifecycle Process for background-aware components
 
-# Utility library versions
-objectboxGradlePlugin = "4.3.0"
-storage_helper = "2.1.0"
-permissionx = "1.8.1"
-lottie_animation = "6.6.7"
-glide_image_loader = "4.16.0"
+# --- Utility Libraries ---
+objectbox_gradle_plugin = "4.3.0"   # ObjectBox database plugin
+storage_helper = "2.1.0"            # SAF-based file picker and file I/O
+permissionx = "1.8.1"               # PermissionX runtime permission handling
+lottie_animation = "6.6.7"          # Lottie animation library
+glide_image_loader = "4.16.0"       # Glide for image loading and caching
 
-# Networking
-okhttp = "5.1.0"
+# --- Networking ---
+okhttp = "5.1.0"                    # OkHttp for HTTP client functionality
 
 [libraries]
-# Core AndroidX libraries
+# --- Android Core Libraries ---
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 
-# Coroutine libraries
+# --- Coroutines ---
 gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlin_coroutine" }
 kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin_coroutine" }
 
-# Lifecycle components
+# --- Lifecycle Components ---
 androidx-lifecycle-process = { group = "androidx.lifecycle", name = "lifecycle-process", version.ref = "lifecycle_process" }
 
-# UI Components
+# --- UI Components ---
 circle-progressbar = { module = "io.github.dinuscxj:circleprogressbar", version.ref = "circle_progressbar" }
 androidx-viewpager2 = { group = "androidx.viewpager2", name = "viewpager2", version.ref = "androidx_viewpager2" }
 androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "androidx_cardview" }
 circle-imageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
 
-# Utility Libraries
-objectbox-gradle-plugin = { module = "io.objectbox:objectbox-gradle-plugin", version.ref = "objectboxGradlePlugin" }
+# --- Utility Libraries ---
+objectbox-gradle-plugin = { module = "io.objectbox:objectbox-gradle-plugin", version.ref = "objectbox_gradle_plugin" }
 saf-storage = { module = "com.anggrayudi:storage", version.ref = "storage_helper" }
 permissionx = { module = "com.guolindev.permissionx:permissionx", version.ref = "permissionx" }
 lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie_animation" }
 
-# Image Loading
+# --- Image Loading ---
 glide-image-loader = { module = "com.github.bumptech.glide:glide", version.ref = "glide_image_loader" }
 
-# Networking
+# --- Networking ---
 okhttp-connection = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 
 [plugins]
-# Android Gradle Plugin
+# --- Android Build Plugins ---
 android-application = { id = "com.android.application", version.ref = "agp" }
 
-# Kotlin Android Plugin
+# --- Kotlin Build Plugins ---
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
