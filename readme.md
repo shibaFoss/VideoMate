@@ -91,7 +91,7 @@ Please read our [Contribution Guidelines](CONTRIBUTING.md) before getting starte
 
 ## 📜 License
 
-VideoMate is released under the ** GNU AFFERO GENERAL PUBLIC LICENSE**. See [LICENSE](LICENSE) for full details.
+VideoMate is released under the **GNU AFFERO GENERAL PUBLIC LICENSE**. See [LICENSE](LICENSE) for full details.
 
 ## 📞 Contact & Support
 
