@@ -39,7 +39,7 @@ android {
      * Default configuration applied to all build variants.
      */
     defaultConfig {
-        // Unique application ID (used on Google Play)
+        // Unique application ID (used on Google Play Store)
         applicationId = "in.videomate"
 
         // Minimum Android version supported by the app
@@ -138,10 +138,10 @@ android {
     buildTypes {
         release {
             // Minify code using R8/ProGuard
-            isMinifyEnabled = true
+            isMinifyEnabled = false
 
             // Shrink unused resources
-            isShrinkResources = true
+            isShrinkResources = false
 
             // Disable debugging for release builds
             isDebuggable = false
@@ -174,9 +174,13 @@ android {
     /**
      * Kotlin-specific compiler options.
      */
-    kotlinOptions {
+    kotlin {
+        jvmToolchain(17)
+
         // JVM target version for Kotlin compiler
-        jvmTarget = "17"
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+        }
     }
 }
 

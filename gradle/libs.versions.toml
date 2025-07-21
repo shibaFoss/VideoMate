@@ -42,7 +42,7 @@ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = 
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 
 # --- Coroutines ---
-gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
+android_gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlin_coroutine" }
 kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin_coroutine" }
 

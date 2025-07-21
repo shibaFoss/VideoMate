@@ -24,7 +24,7 @@ buildscript {
 
     dependencies {
         // Android Gradle Plugin (AGP) for build tools
-        classpath(libs.gradle)
+        classpath(libs.android.gradle)
 
         // ObjectBox database Gradle plugin
         classpath(libs.objectbox.gradle.plugin)
