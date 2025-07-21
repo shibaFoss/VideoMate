@@ -60,7 +60,7 @@ The APK will be generated in `app/build/outputs/apk/debug/`
 
 ## 🛠️ Technology Stack
 
-- **Backend**: [youtubedl-android-wrapper](youtubedl-android-wrapper) - The most powerful video downloader engine
+- **Backend**: [youtubedl-android-wrapper](https://github.com/yausername/youtubedl-android) - The most powerful video downloader engine
 - **Frontend**: Native Android (Kotlin/Java)
 - **Architecture**: MVVM (Model-View-ViewModel)
 - **Database**: ObjectBox Library
