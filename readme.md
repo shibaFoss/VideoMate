@@ -56,8 +56,7 @@ VideoMate is available in two ways:
 
 ### 1. Official Releases (Recommended)
 
-Download the latest APK from our *
-*[GitHub Releases page](https://github.com/shibaFoss/VideoMate/releases/)** Or
+Download the latest APK from our **[GitHub Releases page](https://github.com/shibaFoss/VideoMate/releases/)** Or
 straight [Download the lastest apk here](https://github.com/shibaFoss/VideoMate/releases/download/20250510/AIO_version_20250510.apk)
 
 ### 2. Build from Source
@@ -65,7 +64,7 @@ straight [Download the lastest apk here](https://github.com/shibaFoss/VideoMate/
 For developers who want to build the app themselves:
 
 ```bash
-git clone https://github.com/yourusername/VideoMate.git
+git clone https://github.com/shibafoss/VideoMate.git
 cd VideoMate
 ./gradlew assembleDebug
 ```

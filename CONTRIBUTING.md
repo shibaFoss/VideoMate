@@ -56,14 +56,103 @@ New to open source? Great!
 
 ## ⚙️ Building From Source
 
-To build the app locally:
+To build and run the app locally on your development machine, follow the steps below. This guide assumes you have basic knowledge of Git and Android Studio. If you're new to either, feel free to ask for help in the community!
 
-1. Fork this repository.
-2. Clone it and open the project in **Android Studio (preferably the latest Canary version)**.
-3. Let Gradle sync and build the app.
-4. You’re ready to explore and contribute!
+### 1. Fork the Repository
+
+Create your own copy of the repository by clicking the **Fork** button on the top-right corner of the [VideoMate GitHub page](https://github.com/shibafoss/VideoMate). This allows you to freely experiment with changes without affecting the original project.
+
+### 2. Clone the Repository
+
+After forking, clone the repository to your local machine using the following Git command:
+
+```bash
+git clone https://github.com/shibafoss/VideoMate.git
+```
+
+Replace `your-username` with your GitHub username. This creates a local copy of the project on your machine.
+
+### 3. Open the Project in Android Studio
+
+- Launch **Android Studio**.
+- Select **"Open an Existing Project"** from the welcome screen.
+- Navigate to the folder where you cloned the repository and select it.
+
+> ✅ It is recommended to use the latest **Android Studio Canary** version for the best compatibility with modern Android features and build tools.
+
+### 4. Sync the Gradle Project
+
+Once the project is open, Android Studio will attempt to sync all Gradle files automatically. If not prompted:
+
+- Click **File > Sync Project with Gradle Files**.
+- Make sure you have an active internet connection, as dependencies may need to be downloaded.
+
+### 5. Resolve Dependencies (if needed)
+
+If you run into missing dependencies or build errors:
+
+- Make sure you’ve installed the required **Android SDKs** and **Build Tools**.
+- Go to **Tools > SDK Manager** and install any missing components as prompted.
+
+### 6. Build and Run the App
+
+- Connect a physical Android device via USB (with USB debugging enabled) or use an Android emulator.
+- Click the **Run ▶** button in the toolbar.
+- Android Studio will compile the app and install it on the selected device/emulator.
+
+### 7. Start Exploring and Contributing
+
+Now that the app is running, you're all set to:
+
+- Explore the source code.
+- Make improvements or fix bugs.
+- Test features.
+- Submit pull requests!
+
+> 💡 Tip: If you're unfamiliar with how to use Git branches, commits, or pull requests, many guides are available on GitHub Docs or reach out in the community chat.
 
 ---
+
+## 📜 Contributor Guidelines
+
+VideoMate is a project built with simplicity and clarity in mind. To maintain consistency across the codebase, please follow these contributor guidelines:
+
+### 🔧 Coding Style
+
+- Use **simple and clean Kotlin or Java code**. Avoid complex patterns unless absolutely necessary.
+- Follow basic Android coding practices — stick to core SDK components (e.g., Activities, Services, BroadcastReceivers, etc.).
+- Avoid frameworks or tools that add unnecessary abstraction or complexity, such as:
+    - Dependency Injection (Dagger, Hilt)
+    - Reactive frameworks (RxJava, Flow)
+    - ViewModel/LiveData unless already used
+    - Advanced architectural patterns (MVI, MVVM with complex toolchains)
+
+### 🧩 Architecture
+
+- Keep the architecture **minimal and intuitive**. There's no formal architecture enforced — just organized, modular, and readable code.
+- Group related files together logically (e.g., UI, service, utils).
+- Avoid over-abstracting features into multiple unnecessary layers.
+
+### 📝 Code Practices
+
+- Write methods that are short, self-explanatory, and focused on a single task.
+- Use meaningful variable and method names.
+- Add inline comments where logic may not be immediately clear.
+- Avoid magic numbers or hardcoded strings — use constants where appropriate.
+- Prefer readability and simplicity over clever or compact code tricks.
+
+### 🚫 What Not to Use
+
+- No third-party dependency injection libraries (like Dagger, Hilt).
+- No complex build toolchains.
+- Avoid introducing libraries that are not absolutely essential to the project.
+
+### 🤝 Contribution Spirit
+
+- This project is also intended for learning Android development, so keeping it simple helps everyone understand and contribute.
+- Always aim for code that a beginner could read and learn from.
+
+By contributing with these principles in mind, you help maintain a codebase that is beginner-friendly, stable, and easy to evolve over time.
 
 ## 🗨️ Community & Support
 
@@ -77,4 +166,4 @@ For questions, ideas, or support:
 
 ## ⚠️ Disclaimer
 
-This is a personal learning project focused on Android development. While it's functional and actively improved, it may not follow all best practices. Please manage your expectations, and feel free to contribute toward making it better!
+This project is a personal learning initiative centered around Android development. While it is fully functional and continuously improved, it may not adhere to all industry best practices or architectural standards. Contributors and users are encouraged to approach with an open mind, and you're very welcome to contribute toward refining and enhancing it over time.
