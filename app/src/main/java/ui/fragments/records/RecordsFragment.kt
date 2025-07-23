@@ -9,12 +9,11 @@ import net.base.R
 class RecordsFragment : GlobalBaseFragment() {
 
     override fun getLayoutResId(): Int {
-        return R.layout.fragment_records
+        return R.layout.fragment_base
     }
 
     override fun onAfterLayoutLoad(layoutView: View, state: Bundle?) {
         safeFragmentLayoutRef?.apply {
-            findViewById<CircleProgressBar>(R.id.progress_monthly_spent).progress = 70
 
         }
     }

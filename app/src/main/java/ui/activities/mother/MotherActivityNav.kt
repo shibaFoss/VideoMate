@@ -14,11 +14,11 @@ class MotherActivityNav(private val motherActivity: MotherActivity?) {
     private val buttons by lazy {
         motherActivity?.let { safeActivityRef ->
             mapOf(
-                R.id.btn_records_tab to { safeActivityRef.openRecordsFragment() },
-                R.id.btn_analytics_tab to { safeActivityRef.openAnalyticsFragment() },
-                R.id.btn_budgets_tab to { safeActivityRef.openBudgetsFragment() },
-                R.id.btn_accounts_tab to { safeActivityRef.openAccountsFragment() },
-                R.id.btn_categories_tab to { safeActivityRef.openCategoriesFragment() }
+                R.id.btn_home_tab to { safeActivityRef.openRecordsFragment() },
+                R.id.btn_music_tab to { safeActivityRef.openAnalyticsFragment() },
+                R.id.btn_browser_tab to { safeActivityRef.openBudgetsFragment() },
+                R.id.btn_downloads_tab to { safeActivityRef.openAccountsFragment() },
+                R.id.btn_settings_tab to { safeActivityRef.openCategoriesFragment() }
             )
         }
     }
@@ -38,29 +38,29 @@ class MotherActivityNav(private val motherActivity: MotherActivity?) {
         motherActivity?.let { safeActivityRef ->
             val buttonTabs = mapOf(
                 Tab.RECORDS_TAB to listOf(
-                    R.id.btn_records_tab,
-                    R.id.img_records_tab,
-                    R.id.txt_records_tab
+                    R.id.btn_home_tab,
+                    R.id.img_home_tab,
+                    R.id.txt_home_tab
                 ),
                 Tab.ANALYTICS_TAB to listOf(
-                    R.id.btn_analytics_tab,
-                    R.id.img_analytics_tab,
-                    R.id.txt_analytics_tab
+                    R.id.btn_music_tab,
+                    R.id.img_music_tab,
+                    R.id.txt_music_tab
                 ),
                 Tab.BUDGETS_TAB to listOf(
-                    R.id.btn_budgets_tab,
-                    R.id.img_budgets_tab,
-                    R.id.txt_budgets_tab
+                    R.id.btn_browser_tab,
+                    R.id.img_browser_tab,
+                    R.id.txt_browser_tab
                 ),
                 Tab.ACCOUNTS_TAB to listOf(
-                    R.id.btn_accounts_tab,
-                    R.id.img_accounts_tab,
-                    R.id.txt_accounts_tab
+                    R.id.btn_downloads_tab,
+                    R.id.img_downloads_tab,
+                    R.id.txt_downloads_tab
                 ),
                 Tab.CATEGORIES_TAB to listOf(
-                    R.id.btn_categories_tab,
-                    R.id.img_categories_tab,
-                    R.id.txt_categories_tab
+                    R.id.btn_settings_tab,
+                    R.id.img_settings_tab,
+                    R.id.txt_settings_tab
                 )
             )
 
