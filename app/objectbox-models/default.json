@@ -1,0 +1,612 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:1114711268975773383",
+      "lastPropertyId": "31:6000390257431296404",
+      "name": "GlobalAccount",
+      "properties": [
+        {
+          "id": "1:173236794848685949",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:4970939665622334380",
+          "name": "uniqueId",
+          "type": 6
+        },
+        {
+          "id": "3:7273769158663353116",
+          "name": "accountName",
+          "type": 9
+        },
+        {
+          "id": "4:3850209410914590921",
+          "name": "accountType",
+          "type": 9
+        },
+        {
+          "id": "5:625514612277331397",
+          "name": "institutionName",
+          "type": 9
+        },
+        {
+          "id": "6:410898207033911767",
+          "name": "branchName",
+          "type": 9
+        },
+        {
+          "id": "7:2829632338325107173",
+          "name": "institutionLogoUrl",
+          "type": 9
+        },
+        {
+          "id": "8:974246814552224957",
+          "name": "accountHolderName",
+          "type": 9
+        },
+        {
+          "id": "9:6402419745415546023",
+          "name": "accountNumberMasked",
+          "type": 9
+        },
+        {
+          "id": "10:2462009506402044743",
+          "name": "accountNumberFull",
+          "type": 9
+        },
+        {
+          "id": "11:2743879920423871534",
+          "name": "ifscCode",
+          "type": 9
+        },
+        {
+          "id": "12:8549028035674244161",
+          "name": "upiId",
+          "type": 9
+        },
+        {
+          "id": "13:7098447682356399014",
+          "name": "countryCode",
+          "type": 5
+        },
+        {
+          "id": "14:5355652876601205528",
+          "name": "currencyCode",
+          "type": 9
+        },
+        {
+          "id": "15:57483473253539800",
+          "name": "currencySymbol",
+          "type": 9
+        },
+        {
+          "id": "16:6472329672274562740",
+          "name": "isPrimary",
+          "type": 1
+        },
+        {
+          "id": "17:4593923211436120402",
+          "name": "isActive",
+          "type": 1
+        },
+        {
+          "id": "18:8692543297730880054",
+          "name": "isFavorite",
+          "type": 1
+        },
+        {
+          "id": "19:529713916547025000",
+          "name": "accountColor",
+          "type": 9
+        },
+        {
+          "id": "20:7262209990989343153",
+          "name": "balanceAmount",
+          "type": 8
+        },
+        {
+          "id": "21:3490637857645928051",
+          "name": "creditLimit",
+          "type": 8
+        },
+        {
+          "id": "22:4698729383503794604",
+          "name": "overdraftLimit",
+          "type": 8
+        },
+        {
+          "id": "23:2314952333172738522",
+          "name": "tags",
+          "type": 9
+        },
+        {
+          "id": "24:2833555507690102470",
+          "name": "iconResId",
+          "type": 5
+        },
+        {
+          "id": "25:5736602885240135983",
+          "name": "notes",
+          "type": 9
+        },
+        {
+          "id": "26:4562416400995661098",
+          "name": "syncId",
+          "type": 9
+        },
+        {
+          "id": "27:8887932443355061742",
+          "name": "isSynced",
+          "type": 1
+        },
+        {
+          "id": "28:2100722747284695754",
+          "name": "isDeleted",
+          "type": 1
+        },
+        {
+          "id": "29:3123478598055649457",
+          "name": "createdAt",
+          "type": 6
+        },
+        {
+          "id": "30:6707536455488670298",
+          "name": "lastUpdated",
+          "type": 6
+        },
+        {
+          "id": "31:6000390257431296404",
+          "name": "databaseId",
+          "indexId": "1:8556171268209480098",
+          "type": 11,
+          "flags": 520,
+          "relationTarget": "GlobalDatabase"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:8934444388431941234",
+      "lastPropertyId": "15:4854149079181483872",
+      "name": "GlobalAppSettings",
+      "properties": [
+        {
+          "id": "1:4202442423065567047",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:1307228882183894032",
+          "name": "appThemeCode",
+          "type": 5
+        },
+        {
+          "id": "3:922715884694903043",
+          "name": "appFontScale",
+          "type": 7
+        },
+        {
+          "id": "4:7238141246718496439",
+          "name": "defaultHomeTab",
+          "type": 9
+        },
+        {
+          "id": "5:3534912792463144729",
+          "name": "hasAppCrashedRecently",
+          "type": 1
+        },
+        {
+          "id": "6:6568958617448248451",
+          "name": "crashLog",
+          "type": 9
+        },
+        {
+          "id": "7:9116094222053770488",
+          "name": "userSelectedAppUILanguage",
+          "type": 9
+        },
+        {
+          "id": "8:321537683220458472",
+          "name": "notificationsEnabled",
+          "type": 1
+        },
+        {
+          "id": "9:3209360147215337274",
+          "name": "autoSyncEnabled",
+          "type": 1
+        },
+        {
+          "id": "10:6896054752209784106",
+          "name": "useBiometricAuth",
+          "type": 1
+        },
+        {
+          "id": "11:6625445328837056259",
+          "name": "backupFrequencyDays",
+          "type": 5
+        },
+        {
+          "id": "12:455561269328758517",
+          "name": "lastBackupAt",
+          "type": 6
+        },
+        {
+          "id": "13:4347500373540499154",
+          "name": "isPremiumUser",
+          "type": 1
+        },
+        {
+          "id": "14:8035390107748941691",
+          "name": "appLaunchCount",
+          "type": 5
+        },
+        {
+          "id": "15:4854149079181483872",
+          "name": "lastUpdatedAt",
+          "type": 6
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:7120205810614464662",
+      "lastPropertyId": "19:3085361850648142997",
+      "name": "GlobalAppUser",
+      "properties": [
+        {
+          "id": "1:2524161337413482634",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5444094862171770044",
+          "name": "userName",
+          "type": 9
+        },
+        {
+          "id": "3:1299353341194083584",
+          "name": "emailId",
+          "type": 9
+        },
+        {
+          "id": "4:5354070212655408568",
+          "name": "phoneNumber",
+          "type": 9
+        },
+        {
+          "id": "5:7816834149029211376",
+          "name": "profileImageUrl",
+          "type": 9
+        },
+        {
+          "id": "6:3770361131008622228",
+          "name": "gender",
+          "type": 9
+        },
+        {
+          "id": "7:4156866272176085445",
+          "name": "birthDate",
+          "type": 9
+        },
+        {
+          "id": "8:3419065000686286095",
+          "name": "country",
+          "type": 9
+        },
+        {
+          "id": "9:8847388029039294159",
+          "name": "countryCode",
+          "type": 5
+        },
+        {
+          "id": "10:955770303144805065",
+          "name": "preferredCurrency",
+          "type": 9
+        },
+        {
+          "id": "11:4168615080090298606",
+          "name": "preferredLanguage",
+          "type": 9
+        },
+        {
+          "id": "12:4814527010307100285",
+          "name": "hasLoggedIn",
+          "type": 1
+        },
+        {
+          "id": "13:7527259756696436645",
+          "name": "loginCount",
+          "type": 5
+        },
+        {
+          "id": "14:3494748628647344150",
+          "name": "lastLoginAt",
+          "type": 6
+        },
+        {
+          "id": "15:5408343351696613563",
+          "name": "isGuestUser",
+          "type": 1
+        },
+        {
+          "id": "16:936881795149125681",
+          "name": "isSynced",
+          "type": 1
+        },
+        {
+          "id": "17:7759370822180528469",
+          "name": "syncId",
+          "type": 9
+        },
+        {
+          "id": "18:17206547147904926",
+          "name": "createdAt",
+          "type": 6
+        },
+        {
+          "id": "19:3085361850648142997",
+          "name": "updatedAt",
+          "type": 6
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "4:316751574123548364",
+      "lastPropertyId": "14:3387469006998583503",
+      "name": "GlobalCategory",
+      "properties": [
+        {
+          "id": "1:5231370156410505132",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:3087223740080552226",
+          "name": "categoryName",
+          "type": 9
+        },
+        {
+          "id": "3:1014664029026128224",
+          "name": "categoryType",
+          "type": 9
+        },
+        {
+          "id": "4:2665030454183984617",
+          "name": "iconName",
+          "type": 9
+        },
+        {
+          "id": "5:511140361345641477",
+          "name": "colorHex",
+          "type": 9
+        },
+        {
+          "id": "6:2617637312599942023",
+          "name": "isDefault",
+          "type": 1
+        },
+        {
+          "id": "7:123125252325606646",
+          "name": "isArchived",
+          "type": 1
+        },
+        {
+          "id": "8:5273535112757403891",
+          "name": "displayOrder",
+          "type": 5
+        },
+        {
+          "id": "9:243310044412074208",
+          "name": "usageCount",
+          "type": 5
+        },
+        {
+          "id": "10:7730892856032523095",
+          "name": "createdAt",
+          "type": 6
+        },
+        {
+          "id": "11:9011825487686504630",
+          "name": "updatedAt",
+          "type": 6
+        },
+        {
+          "id": "12:5814547664318036812",
+          "name": "isSynced",
+          "type": 1
+        },
+        {
+          "id": "13:2843780621476135007",
+          "name": "syncId",
+          "type": 9
+        },
+        {
+          "id": "14:3387469006998583503",
+          "name": "databaseId",
+          "indexId": "2:3545499809759828552",
+          "type": 11,
+          "flags": 520,
+          "relationTarget": "GlobalDatabase"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "5:3010778973441939706",
+      "lastPropertyId": "3:3433721202616018944",
+      "name": "GlobalDatabase",
+      "properties": [
+        {
+          "id": "1:3598083272502122478",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:2107524606073436594",
+          "name": "appSettingsId",
+          "indexId": "3:4527613522403512470",
+          "type": 11,
+          "flags": 520,
+          "relationTarget": "GlobalAppSettings"
+        },
+        {
+          "id": "3:3433721202616018944",
+          "name": "appUserId",
+          "indexId": "4:74975998269115665",
+          "type": 11,
+          "flags": 520,
+          "relationTarget": "GlobalAppUser"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "6:2380942776945188346",
+      "lastPropertyId": "23:4452134644845875752",
+      "name": "GlobalTransaction",
+      "properties": [
+        {
+          "id": "1:2678687178755189562",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:8194277576920176275",
+          "name": "uniqueId",
+          "type": 6
+        },
+        {
+          "id": "3:2832878591492171590",
+          "name": "associatedAccountUniqueId",
+          "type": 6
+        },
+        {
+          "id": "4:387215015930498435",
+          "name": "transactionNote",
+          "type": 9
+        },
+        {
+          "id": "5:4042061568780225467",
+          "name": "transactionType",
+          "type": 9
+        },
+        {
+          "id": "6:4837770520903839177",
+          "name": "categoryIcon",
+          "type": 9
+        },
+        {
+          "id": "7:5577427187098922453",
+          "name": "isExpense",
+          "type": 1
+        },
+        {
+          "id": "8:8686924418429111864",
+          "name": "transactionAmount",
+          "type": 8
+        },
+        {
+          "id": "9:3616937045010969134",
+          "name": "transactionDate",
+          "type": 9
+        },
+        {
+          "id": "10:2891820506395119137",
+          "name": "timestamp",
+          "type": 6
+        },
+        {
+          "id": "11:4189670906835624829",
+          "name": "dayCode",
+          "type": 5
+        },
+        {
+          "id": "12:6640232918830181410",
+          "name": "monthCode",
+          "type": 5
+        },
+        {
+          "id": "13:5135425162492734851",
+          "name": "yearCode",
+          "type": 5
+        },
+        {
+          "id": "14:8924299243217649166",
+          "name": "paymentMethod",
+          "type": 9
+        },
+        {
+          "id": "15:8916821586458901431",
+          "name": "location",
+          "type": 9
+        },
+        {
+          "id": "16:2257916905606334918",
+          "name": "tag",
+          "type": 9
+        },
+        {
+          "id": "17:594826064409190321",
+          "name": "isRecurring",
+          "type": 1
+        },
+        {
+          "id": "18:4337675343932901026",
+          "name": "isRefund",
+          "type": 1
+        },
+        {
+          "id": "19:7955144231732262120",
+          "name": "isSynced",
+          "type": 1
+        },
+        {
+          "id": "20:8215614188381285349",
+          "name": "syncId",
+          "type": 9
+        },
+        {
+          "id": "21:2889317883943858899",
+          "name": "createdAt",
+          "type": 6
+        },
+        {
+          "id": "22:4287823563789866871",
+          "name": "updatedAt",
+          "type": 6
+        },
+        {
+          "id": "23:4452134644845875752",
+          "name": "databaseId",
+          "indexId": "5:7518712968696878029",
+          "type": 11,
+          "flags": 520,
+          "relationTarget": "GlobalDatabase"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "6:2380942776945188346",
+  "lastIndexId": "5:7518712968696878029",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}
