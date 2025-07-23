@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/style_dialogs"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="UseAppTint,UseCompatTextViewDrawableXml">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/_5"
+        android:layout_marginTop="@dimen/_10"
+        android:layout_marginEnd="@dimen/_5"
+        android:layout_marginBottom="@dimen/_10"
+        app:cardBackgroundColor="@color/color_surface"
+        app:cardCornerRadius="@dimen/_10"
+        app:cardElevation="@dimen/_5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/img_progress_circle"
+                android:layout_width="@dimen/_150"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginBottom="-25dp"
+                android:adjustViewBounds="true"
+                android:hardwareAccelerated="true"
+                android:importantForAccessibility="no"
+                android:layerType="hardware"
+                android:visibility="visible"
+                app:lottie_autoPlay="true"
+                app:lottie_enableMergePathsForKitKatAndAbove="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/lottie_anim_loading"
+                tools:ignore="ImageContrastCheck,VisualLintBounds" />
+
+            <TextView
+                android:id="@+id/txt_progress_info"
+                style="@style/style_dialogs.message"
+                android:layout_marginStart="@dimen/_10"
+                android:layout_marginTop="@dimen/_8"
+                android:layout_marginEnd="@dimen/_10"
+                android:layout_marginBottom="@dimen/_8"
+                android:autoLink="web"
+                android:fontFamily="@font/sans_font_regular"
+                android:text="@string/sample_text_here"
+                android:textSize="@dimen/message_text_size" />
+
+            <RelativeLayout
+                android:id="@+id/btn_dialog_positive_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15"
+                android:layout_marginTop="@dimen/_5"
+                android:layout_marginEnd="@dimen/_15"
+                android:layout_marginBottom="@dimen/_10"
+                android:background="@drawable/btn_selector_solid"
+                android:clickable="true"
+                android:elevation="@dimen/_2"
+                tools:ignore="TouchTargetSizeCheck">
+
+                <TextView
+                    android:id="@+id/btn_dialog_positive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/_7"
+                    android:drawableStart="@drawable/ic_cancel"
+                    android:drawablePadding="@dimen/_5"
+                    android:drawableTint="@color/color_background"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/sans_font_medium"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/cancel"
+                    android:textColor="@color/color_on_secondary"
+                    android:textSize="@dimen/normal_text_size" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

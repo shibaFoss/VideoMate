@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_open_bg">
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/mother_activity_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_tab_navigation"
+        android:background="@color/transparent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <include
+        android:id="@+id/bottom_tab_navigation"
+        layout="@layout/activity_mother_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

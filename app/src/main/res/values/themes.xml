@@ -1,16 +1,45 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.TubeAIO" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="style.application" parent="Theme.AppCompat.DayNight.NoActionBar">
+
+        <!-- System bar and background styling -->
+        <item name="android:statusBarColor">@color/color_surface</item>
+        <item name="android:navigationBarColor">@color/color_surface</item>
+        <item name="android:windowBackground">@color/color_surface</item>
+
+        <!-- Light/dark system bar content -->
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+
+        <!-- Window behavior settings -->
+        <item name="android:windowActivityTransitions">false</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">always</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:fitsSystemWindows">true</item>
+
+        <!-- Primary color theme -->
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_variant</item>
+        <item name="colorError">@color/color_error</item>
+        <item name="colorAccent">@color/color_secondary</item>
+
+        <!-- Layout direction -->
+        <item name="android:layoutDirection">ltr</item>
+
+        <!-- Default text colors for the application -->
+        <item name="android:textColorPrimary">@color/color_text_primary</item>
+        <item name="android:textColorSecondary">@color/color_text_secondary</item>
+        <item name="android:textColorHint">@color/color_text_hint</item>
+        <item name="android:textColor">@color/color_text_primary</item>
+        <item name="android:textColorLink">@color/color_secondary</item>
+
+        <!-- Font and style overrides -->
+        <item name="android:fontFamily">@font/app_font_family</item>
+        <item name="android:textViewStyle">@style/style_textview</item>
+        <item name="android:checkboxStyle">@style/style_textview</item>
+        <item name="android:switchStyle">@style/style_textview</item>
+
     </style>
+
 </resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_open_bg"
+    tools:context="ui.activities.startup.StartupActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <ImageView
+            android:id="@+id/img_opening_splash"
+            android:layout_width="@dimen/_150"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_20"
+            android:layout_marginBottom="@dimen/_10"
+            android:adjustViewBounds="true"
+            android:elevation="@dimen/_2"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_app_logo" />
+
+        <TextView
+            android:id="@+id/txt_opening_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_5"
+            android:fontFamily="@font/sans_font_medium"
+            android:gravity="center"
+            android:paddingStart="@dimen/_10"
+            android:paddingTop="@dimen/_2"
+            android:paddingEnd="@dimen/_10"
+            android:paddingBottom="@dimen/_2"
+            android:text="@string/app_name"
+            android:textColor="@color/color_text_primary"
+            android:textSize="@dimen/extra_large_text_size" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/img_progress_circle"
+            android:layout_width="@dimen/_150"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginBottom="-25dp"
+            android:adjustViewBounds="true"
+            android:hardwareAccelerated="true"
+            android:importantForAccessibility="no"
+            android:layerType="hardware"
+            android:visibility="visible"
+            app:lottie_autoPlay="true"
+            app:lottie_enableMergePathsForKitKatAndAbove="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/lottie_anim_loading"
+            tools:ignore="ImageContrastCheck,VisualLintBounds" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50" />
+
+    </LinearLayout>
+
+</RelativeLayout>

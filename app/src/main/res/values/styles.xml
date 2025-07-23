@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Style applied to general TextViews to enhance text readability -->
+    <style name="style_textview">
+        <item name="android:includeFontPadding">true</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+    <!-- Dimens used for consistent text sizes across the app -->
+    <dimen name="smallest_text_size">8sp</dimen>
+    <dimen name="smaller_text_size">10sp</dimen>
+    <dimen name="small_text_size">12sp</dimen>
+    <dimen name="message_text_size">14sp</dimen>
+    <dimen name="normal_text_size_small">15sp</dimen>
+    <dimen name="normal_text_size">16sp</dimen>
+    <dimen name="sub_heading_text_size">18sp</dimen>
+    <dimen name="title_text_size">20sp</dimen>
+    <dimen name="actionbar_text_size">22sp</dimen>
+    <dimen name="extra_large_text_size">24sp</dimen>
+
+    <!-- Base dialog style with transparent background and floating properties -->
+    <style name="style_dialogs" parent="Theme.AppCompat.DayNight.Dialog.MinWidth">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <!-- Dialog title style with centered, bold text -->
+    <style name="style_dialogs.title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">@dimen/sub_heading_text_size</item>
+        <item name="android:textColor">@color/color_text_primary</item>
+        <item name="android:fontFamily">@font/sans_font_bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <!-- Dialog message style with readable font and centered layout -->
+    <style name="style_dialogs.message">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/normal_text_size</item>
+        <item name="android:textColor">@color/color_text_primary</item>
+        <item name="android:textColorLink">@color/color_secondary</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+    </style>
+
+    <!-- Dialog animation style for slide enter/exit transitions -->
+    <style name="style_dialogs.animation">
+        <item name="android:windowEnterAnimation">@anim/anim_slide_up_enter</item>
+        <item name="android:windowExitAnimation">@anim/anim_slide_down_exit</item>
+    </style>
+
+    <!-- Base style for buttons used in the app -->
+    <style name="style_button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/_42</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_marginTop">@dimen/_5</item>
+        <item name="android:layout_marginBottom">@dimen/_5</item>
+        <item name="android:layout_marginStart">@dimen/_5</item>
+        <item name="android:layout_marginEnd">@dimen/_5</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:letterSpacing">0.025</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/normal_text_size</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:drawablePadding">@dimen/_5</item>
+        <item name="android:background">@drawable/btn_selector_solid_trans</item>
+        <item name="android:clickable">true</item>
+        <item name="android:fontFamily">@font/sans_font_regular</item>
+        <item name="android:textColor">@color/color_text_secondary</item>
+    </style>
+
+    <!-- Popup-specific button styling derived from base button style -->
+    <style name="style_popup_button" parent="style_button">
+        <item name="android:textColor">@color/color_text_primary</item>
+        <item name="android:fontFamily">@font/sans_font_regular</item>
+        <item name="android:layout_margin">@dimen/_5</item>
+    </style>
+
+</resources>

@@ -1,3 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Tube AIO+</string>
+    <string name="app_name">VideoMate</string>
+    <string name="unknown">Unknown</string>
+    <string name="google_play_store_inst_installed">Google play store isn\'t installed.</string>
+    <string name="charging">Charging</string>
+    <string name="full">Full</string>
+    <string name="discharging">Discharging</string>
+    <string name="not_charging">Not Charging</string>
+    <string name="share_via">Share via</string>
+    <string name="share">Share</string>
+    <string name="no_app_found_to_open_this_file">No app found to open this file.</string>
+    <string name="sharing_media_file_">Sharing media file…</string>
+
+    <string name="sounds">Sounds</string>
+    <string name="archives">Archives</string>
+    <string name="programs">Programs</string>
+    <string name="videos">Videos</string>
+    <string name="documents">Documents</string>
+    <string name="images">Images</string>
+    <string name="others">Others</string>
+    <string name="title_goes_here">Title goes here.</string>
+    <string name="message_goes_here">Message goes here.</string>
+    <string name="okay">Okay</string>
+    <string name="cancel">Cancel</string>
+    <string name="sample_text_here">Sample text here.</string>
+    <string name="press_back_button_to_exit">Press back once more to exit.</string>
+    <string name="send_email">Send Email</string>
+    <string name="app_will_restart_to_take_effect">App will restart to take effect.</string>
+    <string name="apply_changes">Apply Changes</string>
+    <string name="change_default_language">Change Default Language</string>
+    <string name="allow_the_permissions">Allow the permissions</string>
+    <string name="allow_now">Allow Now</string>
+    <string name="allow_permission_in_setting"><![CDATA[>You need to allow necessary permissions in Settings manually.]]></string>
+
 </resources>

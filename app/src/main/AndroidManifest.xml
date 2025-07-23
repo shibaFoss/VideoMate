@@ -2,39 +2,63 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- =============== PERMISSIONS =============== -->
-    <!-- Network permissions -->
+    <!--
+        ==================== PERMISSIONS ====================
+        These permissions define what system-level access the app can request.
+    -->
+
+    <!-- Allows the app to open network sockets -->
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Allows access to information about networks -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Allows access to information about Wi-Fi networks -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
-    <!-- Notification permissions -->
+    <!-- Allows posting of notifications (Android 13+) -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Allows the app to vibrate the device -->
     <uses-permission android:name="android.permission.VIBRATE" />
 
-    <!-- Background operation permissions -->
+    <!-- Allows the app to receive the BOOT_COMPLETED broadcast after the system finishes booting -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- Allows the app to prevent the phone from going to sleep -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-    <!-- File and storage permissions -->
+    <!-- Allows reading content from a content URI (usually for file sharing) -->
     <uses-permission android:name="android.permission.FLAG_GRANT_READ_URI_PERMISSION" />
+
+    <!-- Legacy permission to write to external storage (for Android <= 32) -->
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="32"
         tools:ignore="ScopedStorage" />
+
+    <!-- Legacy permission to read from external storage (for Android <= 32) -->
     <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
 
-    <!-- Foreground service permissions -->
+    <!-- Allows the app to start a foreground service -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <!-- Permission to perform foreground data sync services -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
 
-    <!-- Battery optimization and installation permissions -->
+    <!-- Allows the app to request installing packages from unknown sources -->
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <!-- Allows the app to create windows shown on top of other apps (used for overlays, etc.) -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
-    <!-- =============== APPLICATION CONFIGURATION =============== -->
+
+    <!--
+        ==================== APPLICATION CONFIGURATION ====================
+        Main configuration block for the app's runtime behavior, appearance, and entry points.
+    -->
     <application
         android:name="core.bases.GlobalApplication"
         android:allowBackup="true"
@@ -47,6 +71,7 @@
         android:theme="@style/style.application"
         android:usesCleartextTraffic="true">
 
+        <!-- Launcher activity shown when the app starts -->
         <activity
             android:name="ui.activities.startup.LauncherActivity"
             android:exported="true">
@@ -56,6 +81,7 @@
             </intent-filter>
         </activity>
 
+        <!-- Activity handling app startup logic -->
         <activity
             android:name="ui.activities.startup.StartupActivity"
             android:alwaysRetainTaskState="true"
@@ -66,6 +92,7 @@
             android:theme="@style/style.application"
             android:windowSoftInputMode="adjustPan" />
 
+        <!-- Main container activity after app has initialized -->
         <activity
             android:name="ui.activities.mother.MotherActivity"
             android:alwaysRetainTaskState="true"
@@ -77,8 +104,10 @@
             android:theme="@style/style.application"
             android:windowSoftInputMode="adjustPan" />
 
-        <!-- =============== PROVIDERS =============== -->
-        <!-- File provider for secure file sharing -->
+        <!--
+            ==================== PROVIDERS ====================
+            Declares a FileProvider for sharing files securely with other apps.
+        -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -90,19 +119,25 @@
         </provider>
     </application>
 
-    <!-- =============== QUERIES =============== -->
-    <!-- Declare which external intents the app needs to query for -->
+    <!--
+        ==================== QUERIES ====================
+        Required since Android 11+ to declare which other apps the app intends to interact with.
+    -->
     <queries>
+        <!-- Sending emails -->
         <intent>
             <action android:name="android.intent.action.SEND" />
             <data android:mimeType="message/rfc822" />
         </intent>
+
+        <!-- Viewing URLs in a browser -->
         <intent>
             <action android:name="android.intent.action.VIEW" />
             <category android:name="android.intent.category.BROWSABLE" />
             <data android:scheme="https" />
         </intent>
 
+        <!-- Explicitly query specific known apps (to interact with or detect if installed) -->
         <package android:name="com.google.android.youtube" />
         <package android:name="com.instagram.android" />
         <package android:name="com.facebook.katana" />
