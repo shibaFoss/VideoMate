@@ -6,35 +6,39 @@
     <color name="pure_white">#FFFFFF</color>
 
     <!-- Primary Theme Colors -->
-    <color name="color_primary">#0057A0</color>
+    <color name="color_primary">#232323</color>
     <color name="color_primary_lite">#F1FAFF</color>
-    <color name="color_primary_dark">#003E7E</color>
-    <color name="color_primary_variant">#347FC4</color>
-    <color name="color_on_primary">#FFFFFF</color>
+    <color name="color_primary_dark">#161616</color>
+    <color name="color_primary_variant">#424242</color>
+    <color name="color_on_primary">#ffffff</color>
 
     <!-- Secondary Accent Colors -->
-    <color name="color_secondary">#FF9800</color>
-    <color name="color_secondary_variant">#CC7A00</color>
+    <color name="color_secondary">#F0570B</color>
+    <color name="color_secondary_variant">#963A00</color>
     <color name="color_on_secondary">#FFFFFF</color>
 
+    <color name="color_secondary_v2">#FFC107</color>
+    <color name="color_secondary_v2_variant">#FF9800</color>
+
     <!-- Backgrounds and Surfaces -->
-    <color name="color_background">#FAFAFA</color>
+    <color name="color_background">#ffffff</color>
+    <color name="color_surface">#F6F6F6</color>
+
     <color name="color_background_transparent">#80FAFAFA</color>
     <color name="color_background_dark">#F2F2F2</color>
     <color name="color_background_darker">#DBDBDB</color>
-    <color name="color_surface">#FFFFFF</color>
-    <color name="color_action_bar_bg">#F2F2F2</color>
+    <color name="color_action_bar_bg">#FEFEFE</color>
     <color name="color_navigation_bar_bg">@color/color_action_bar_bg</color>
 
     <!-- On-Colors -->
-    <color name="color_on_background">#1E1E1E</color>
-    <color name="color_on_surface">#3A3A3A</color>
+    <color name="color_on_background">#2E2E2E</color>
+    <color name="color_on_surface">#515151</color>
 
     <!-- Text Colors -->
-    <color name="color_text_primary">#212121</color>
+    <color name="color_text_primary">#3E3D3D</color>
     <color name="color_text_secondary">#616161</color>
-    <color name="color_text_hint">#9E9E9E</color>
-    <color name="color_text_subheading">#424242</color>
+    <color name="color_text_hint">#939393</color>
+    <color name="color_text_subheading">#4A4A4A</color>
 
     <!-- Error / Expense Colors -->
     <color name="color_error">#E53935</color>
@@ -56,5 +60,11 @@
     <color name="transparent">#00000000</color>
     <color name="transparent_dark">#1A000000</color>
     <color name="transparent_darker">#4D000000</color>
+
+    <color name="black_light">#dd000000</color>
+    <color name="black_light_secondary">#89000000</color>
+    <color name="black_lighter">#55000000</color>
+    <color name="black_deep_lighter">#d3000000</color>
+    <color name="color_border">#C6CACC</color>color>
 
 </resources>

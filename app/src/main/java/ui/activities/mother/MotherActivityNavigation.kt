@@ -7,16 +7,17 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat.getColor
 import androidx.core.content.res.ResourcesCompat.getDrawable
 import androidx.core.content.res.ResourcesCompat.getFont
+import libs.ui.ViewUtility.onBounceBackOnClick
 import net.base.R
 
-class MotherActivityNav(private val motherActivity: MotherActivity?) {
+class MotherActivityNavigation(private val motherActivity: MotherActivity?) {
 
     private val buttons by lazy {
         motherActivity?.let { safeActivityRef ->
             mapOf(
                 R.id.btn_home_tab to { safeActivityRef.openHomeFragment() },
                 R.id.btn_music_tab to { safeActivityRef.openMusicFragment() },
-                R.id.btn_browser_tab to { safeActivityRef.openBrowserFragment() },
+                R.id.btn_videos_tab to { safeActivityRef.openVideosFragment() },
                 R.id.btn_downloads_tab to { safeActivityRef.openDownloadsFragment() },
                 R.id.btn_settings_tab to { safeActivityRef.openSettingsFragment() }
             )
@@ -28,7 +29,7 @@ class MotherActivityNav(private val motherActivity: MotherActivity?) {
             buttons?.let { buttons ->
                 buttons.keys.forEach { id ->
                     val view = safeActivityRef.findViewById<View>(id)
-                    view.setOnClickListener { buttons[id]?.invoke() }
+                    view.onBounceBackOnClick { buttons[id]?.invoke() }
                 }
             }
         }
@@ -47,10 +48,10 @@ class MotherActivityNav(private val motherActivity: MotherActivity?) {
                     R.id.img_music_tab,
                     R.id.txt_music_tab
                 ),
-                Tab.BROWSER_TAB to listOf(
-                    R.id.btn_browser_tab,
-                    R.id.img_browser_tab,
-                    R.id.txt_browser_tab
+                Tab.VIDEOS_TAB to listOf(
+                    R.id.btn_videos_tab,
+                    R.id.img_videos_tab,
+                    R.id.txt_videos_tab
                 ),
                 Tab.DOWNLOADS_TAB to listOf(
                     R.id.btn_downloads_tab,
@@ -71,17 +72,18 @@ class MotherActivityNav(private val motherActivity: MotherActivity?) {
                     val activityTheme = safeActivityRef.theme
                     val inactiveButtonBg = getDrawable(resources, bgNegativeSelector, activityTheme)
                     container.background = inactiveButtonBg
+                    container.elevation = resources.getDimension(R.dimen._0)
                 }
 
                 safeActivityRef.findViewById<View>(ids[1])?.let { logoImage ->
                     (logoImage as ImageView).apply {
-                        setColorFilter(getColor(context, R.color.color_text_hint), SRC_IN)
+                        setColorFilter(getColor(context, R.color.transparent_white), SRC_IN)
                     }
                 }
 
                 safeActivityRef.findViewById<TextView>(ids[2])?.let { textTab ->
                     textTab.apply {
-                        setTextColor(getColor(context, R.color.color_text_hint))
+                        setTextColor(getColor(context, R.color.transparent_white))
                         typeface = getFont(context, R.font.sans_font_medium)
                     }
                 }
@@ -89,22 +91,23 @@ class MotherActivityNav(private val motherActivity: MotherActivity?) {
 
             buttonTabs[tab]?.let { ids ->
                 safeActivityRef.findViewById<View>(ids[0])?.let { container ->
-                    val bgDrawableResId = R.drawable.rd_transparent
+                    val bgDrawableResId = R.drawable.rd_secondary
                     val resources = safeActivityRef.resources
                     val activityTheme = safeActivityRef.theme
                     val buttonBg = getDrawable(resources, bgDrawableResId, activityTheme)
                     container.background = buttonBg
+                    container.elevation = resources.getDimension(R.dimen._2)
                 }
 
                 safeActivityRef.findViewById<View>(ids[1])?.let { logoImage ->
                     (logoImage as ImageView).apply {
-                        setColorFilter(getColor(context, R.color.color_text_primary), SRC_IN)
+                        setColorFilter(getColor(context, R.color.color_on_secondary), SRC_IN)
                     }
                 }
 
                 safeActivityRef.findViewById<TextView>(ids[2])?.let { textTab ->
                     textTab.apply {
-                        setTextColor(getColor(context, R.color.color_text_primary))
+                        setTextColor(getColor(context, R.color.color_on_secondary))
                         typeface = getFont(context, R.font.sans_font_bold)
                     }
                 }
@@ -115,7 +118,7 @@ class MotherActivityNav(private val motherActivity: MotherActivity?) {
     enum class Tab {
         HOME_TAB,
         MUSIC_TAB,
-        BROWSER_TAB,
+        VIDEOS_TAB,
         DOWNLOADS_TAB,
         SETTINGS_TAB
     }

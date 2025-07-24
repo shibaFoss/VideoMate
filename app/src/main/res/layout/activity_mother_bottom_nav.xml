@@ -1,11 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    Bottom Navigation Panel Layout
-    ================================
-    This layout defines the app-wide bottom navigation bar used across major screens.
-    It presents five equal-width tabs (Home, Music, Browser, Downloads, Settings) inside
-    a CardView container to provide elevation, rounded corners, and a background surface.
--->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -15,10 +8,6 @@
     android:orientation="vertical"
     tools:ignore="UseCompatTextViewDrawableXml,UseAppTint">
 
-    <!--
-        Card container giving the nav bar a surfaced background, elevation shadow, and rounded corners.
-        Margins left/right provide inset from screen edges; top/bottom tighten vertical spacing.
-    -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,15 +15,10 @@
         android:layout_marginTop="@dimen/_5"
         android:layout_marginEnd="@dimen/_10"
         android:layout_marginBottom="@dimen/_5"
-        app:cardBackgroundColor="@color/color_background"
-        app:cardCornerRadius="@dimen/_10"
+        app:cardBackgroundColor="@color/color_primary"
+        app:cardCornerRadius="@dimen/_15"
         app:cardElevation="@dimen/_1">
 
-        <!--
-            Horizontal strip hosting all tab buttons.
-            Uses layout_weight to split width equally across the 5 tabs.
-            baselineAligned = false to avoid extra baseline alignment calculations.
-        -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -42,7 +26,6 @@
             android:orientation="horizontal">
 
             <!-- ================= TAB: HOME ================= -->
-            <!-- Active (selected) visual defaults: transparent background; icon/text tinted primary in runtime. -->
             <LinearLayout
                 android:id="@+id/btn_home_tab"
                 android:layout_width="0dp"
@@ -51,8 +34,9 @@
                 android:layout_marginTop="@dimen/_5"
                 android:layout_marginBottom="@dimen/_5"
                 android:layout_weight="1"
-                android:background="@drawable/rd_transparent"
+                android:background="@drawable/rd_secondary"
                 android:clickable="true"
+                android:elevation="@dimen/_2"
                 android:orientation="vertical">
 
                 <!-- Home icon -->
@@ -65,7 +49,7 @@
                     android:adjustViewBounds="true"
                     android:importantForAccessibility="no"
                     android:src="@drawable/ic_nav_home"
-                    android:tint="@color/color_text_primary"
+                    android:tint="@color/color_on_secondary"
                     tools:ignore="ImageContrastCheck" />
 
                 <!-- Home label -->
@@ -79,13 +63,12 @@
                     android:gravity="center"
                     android:maxLines="1"
                     android:text="@string/title_home"
-                    android:textColor="@color/color_text_primary"
+                    android:textColor="@color/color_on_secondary"
                     android:textSize="@dimen/small_text_size"
                     tools:ignore="TextContrastCheck" />
             </LinearLayout>
 
             <!-- ================= TAB: MUSIC ================= -->
-            <!-- Initially inactive; selector drawable manages pressed/selected highlight. -->
             <LinearLayout
                 android:id="@+id/btn_music_tab"
                 android:layout_width="0dp"
@@ -95,6 +78,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/btn_selector_trans_dark"
                 android:clickable="true"
+                android:elevation="@dimen/_0"
                 android:orientation="vertical">
 
                 <!-- Music icon -->
@@ -107,7 +91,7 @@
                     android:adjustViewBounds="true"
                     android:importantForAccessibility="no"
                     android:src="@drawable/ic_nav_music"
-                    android:tint="@color/color_text_hint"
+                    android:tint="@color/transparent_white"
                     tools:ignore="ImageContrastCheck" />
 
                 <!-- Music label -->
@@ -121,14 +105,14 @@
                     android:gravity="center"
                     android:maxLines="1"
                     android:text="@string/title_music"
-                    android:textColor="@color/color_text_hint"
+                    android:textColor="@color/transparent_white"
                     android:textSize="@dimen/small_text_size"
                     tools:ignore="TextContrastCheck" />
             </LinearLayout>
 
-            <!-- ================= TAB: BROWSER ================= -->
+            <!-- ================= TAB: VIDEOS ================= -->
             <LinearLayout
-                android:id="@+id/btn_browser_tab"
+                android:id="@+id/btn_videos_tab"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5"
@@ -136,24 +120,25 @@
                 android:layout_weight="1"
                 android:background="@drawable/btn_selector_trans_dark"
                 android:clickable="true"
+                android:elevation="@dimen/_0"
                 android:orientation="vertical">
 
-                <!-- Browser icon -->
+                <!-- Videos icon -->
                 <ImageView
-                    android:id="@+id/img_browser_tab"
+                    android:id="@+id/img_videos_tab"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/_5"
                     android:adjustViewBounds="true"
                     android:importantForAccessibility="no"
-                    android:src="@drawable/ic_nav_browser"
-                    android:tint="@color/color_text_hint"
+                    android:src="@drawable/ic_nav_videos"
+                    android:tint="@color/transparent_white"
                     tools:ignore="ImageContrastCheck" />
 
-                <!-- Browser label -->
+                <!-- Videos label -->
                 <TextView
-                    android:id="@+id/txt_browser_tab"
+                    android:id="@+id/txt_videos_tab"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="@dimen/_5"
@@ -161,8 +146,8 @@
                     android:fontFamily="@font/sans_font_medium"
                     android:gravity="center"
                     android:maxLines="1"
-                    android:text="@string/title_browser"
-                    android:textColor="@color/color_text_hint"
+                    android:text="@string/title_videos"
+                    android:textColor="@color/transparent_white"
                     android:textSize="@dimen/small_text_size"
                     tools:ignore="TextContrastCheck" />
             </LinearLayout>
@@ -177,6 +162,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/btn_selector_trans_dark"
                 android:clickable="true"
+                android:elevation="@dimen/_0"
                 android:orientation="vertical">
 
                 <!-- Downloads icon -->
@@ -189,7 +175,7 @@
                     android:adjustViewBounds="true"
                     android:importantForAccessibility="no"
                     android:src="@drawable/ic_nav_downloads"
-                    android:tint="@color/color_text_hint"
+                    android:tint="@color/transparent_white"
                     tools:ignore="ImageContrastCheck" />
 
                 <!-- Downloads label -->
@@ -203,7 +189,7 @@
                     android:gravity="center"
                     android:maxLines="1"
                     android:text="@string/title_tasks"
-                    android:textColor="@color/color_text_hint"
+                    android:textColor="@color/transparent_white"
                     android:textSize="@dimen/small_text_size"
                     tools:ignore="TextContrastCheck" />
             </LinearLayout>
@@ -219,6 +205,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/btn_selector_trans_dark"
                 android:clickable="true"
+                android:elevation="@dimen/_0"
                 android:orientation="vertical">
 
                 <!-- Settings icon -->
@@ -231,7 +218,7 @@
                     android:adjustViewBounds="true"
                     android:importantForAccessibility="no"
                     android:src="@drawable/ic_settings"
-                    android:tint="@color/color_text_hint"
+                    android:tint="@color/transparent_white"
                     tools:ignore="ImageContrastCheck" />
 
                 <!-- Settings label -->
@@ -245,7 +232,7 @@
                     android:gravity="center"
                     android:maxLines="1"
                     android:text="@string/title_settings"
-                    android:textColor="@color/color_text_hint"
+                    android:textColor="@color/transparent_white"
                     android:textSize="@dimen/small_text_size"
                     tools:ignore="TextContrastCheck" />
             </LinearLayout>

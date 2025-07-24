@@ -3,6 +3,7 @@ package libs.ui
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.animation.ObjectAnimator.ofFloat
 import android.app.Activity
 import android.content.Context
@@ -35,6 +36,7 @@ import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.view.WindowMetrics
+import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils.loadAnimation
@@ -1345,6 +1347,7 @@ object ViewUtility {
 	 * @param imageFile The image file from which the bitmap should be decoded.
 	 * @return A [Bitmap] if the decoding is successful, or `null` if the file is invalid or unreadable.
 	 */
+	@JvmStatic
 	fun getBitmapFromFile(imageFile: File): Bitmap? {
 		return try {
 			if (imageFile.exists() && imageFile.isFile) {
@@ -1467,5 +1470,49 @@ object ViewUtility {
 	@JvmStatic
 	fun Int.convertDpToPx(): Int {
 		return (this * getSystem().displayMetrics.density).toInt()
+	}
+
+	/**
+	 * Extension function for [View] that adds a bounce-back animation effect on click.
+	 *
+	 * When this function is applied, the view briefly scales down to 95% of its original size
+	 * and then scales back to 100%, simulating a bounce effect. After the animation completes,
+	 * the provided [onClick] lambda is executed.
+	 *
+	 * @param onClick A lambda function that is invoked after the bounce-back animation finishes.
+	 */
+	fun View.onBounceBackOnClick(onClick: (View) -> Unit) {
+		this.setOnClickListener { view ->
+			// Create scale down animation for X and Y axis
+			val scaleDownX = ofFloat(view, "scaleX", 0.95f)
+			val scaleDownY = ofFloat(view, "scaleY", 0.95f)
+
+			// Create scale up (bounce back) animation for X and Y axis
+			val scaleUpX = ofFloat(view, "scaleX", 1.0f)
+			val scaleUpY = ofFloat(view, "scaleY", 1.0f)
+
+			// Set duration for each animation phase
+			scaleDownX.duration = 100
+			scaleDownY.duration = 100
+			scaleUpX.duration = 100
+			scaleUpY.duration = 100
+
+			// Chain animations using AnimatorSet
+			val animatorSet = AnimatorSet().apply {
+				play(scaleDownX).with(scaleDownY)
+				play(scaleUpX).with(scaleUpY).after(scaleDownX)
+				interpolator = AccelerateDecelerateInterpolator()
+			}
+
+			// Start the animation
+			animatorSet.start()
+
+			// Trigger the actual click action after animation ends
+			animatorSet.addListener(object : AnimatorListenerAdapter() {
+				override fun onAnimationEnd(animation: Animator) {
+					onClick(view)
+				}
+			})
+		}
 	}
 }

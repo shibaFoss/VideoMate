@@ -17,7 +17,7 @@ class MotherActivity : GlobalBaseActivity() {
     private val safeMotherActivityRef = weakMotherActivityRef.get()
 
     private lateinit var fragmentViewPager: ViewPager
-    private lateinit var motherActivityNav: MotherActivityNav
+    private lateinit var motherActivityNavigation: MotherActivityNavigation
 
     var recordsFragment: RecordsFragment? = null
     var analyticsFragment: AnalyticsFragment? = null
@@ -61,7 +61,7 @@ class MotherActivity : GlobalBaseActivity() {
         }
     }
 
-    fun openBrowserFragment() {
+    fun openVideosFragment() {
         if (fragmentViewPager.currentItem != 2) {
             fragmentViewPager.currentItem = 2
         }
@@ -92,19 +92,19 @@ class MotherActivity : GlobalBaseActivity() {
 
     private fun setupBottomTabs() {
         safeMotherActivityRef?.let { safeMotherActivityRef ->
-            motherActivityNav = MotherActivityNav(safeMotherActivityRef)
-            motherActivityNav.initialize()
+            motherActivityNavigation = MotherActivityNavigation(safeMotherActivityRef)
+            motherActivityNavigation.initialize()
         }
     }
 
     private fun updateButtonTabSelectionUI(currentItem: Int = fragmentViewPager.currentItem) {
         doSomeVibration(30)
         when (currentItem) {
-            0 -> motherActivityNav.updateTabSelectionUI(MotherActivityNav.Tab.HOME_TAB)
-            1 -> motherActivityNav.updateTabSelectionUI(MotherActivityNav.Tab.MUSIC_TAB)
-            2 -> motherActivityNav.updateTabSelectionUI(MotherActivityNav.Tab.BROWSER_TAB)
-            3 -> motherActivityNav.updateTabSelectionUI(MotherActivityNav.Tab.DOWNLOADS_TAB)
-            else -> motherActivityNav.updateTabSelectionUI(MotherActivityNav.Tab.SETTINGS_TAB)
+            0 -> motherActivityNavigation.updateTabSelectionUI(MotherActivityNavigation.Tab.HOME_TAB)
+            1 -> motherActivityNavigation.updateTabSelectionUI(MotherActivityNavigation.Tab.MUSIC_TAB)
+            2 -> motherActivityNavigation.updateTabSelectionUI(MotherActivityNavigation.Tab.VIDEOS_TAB)
+            3 -> motherActivityNavigation.updateTabSelectionUI(MotherActivityNavigation.Tab.DOWNLOADS_TAB)
+            else -> motherActivityNavigation.updateTabSelectionUI(MotherActivityNavigation.Tab.SETTINGS_TAB)
         }
     }
 
@@ -113,7 +113,7 @@ class MotherActivity : GlobalBaseActivity() {
             when (fragmentViewPager.currentItem) {
                 1 -> openHomeFragment()
                 2 -> openMusicFragment()
-                3 -> openBrowserFragment()
+                3 -> openVideosFragment()
                 4 -> openDownloadsFragment()
                 else -> {
                     exitActivityOnDoubleBackPress()
