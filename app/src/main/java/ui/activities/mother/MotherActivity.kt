@@ -49,31 +49,31 @@ class MotherActivity : GlobalBaseActivity() {
 
     override fun onDestroyActivity() {}
 
-    fun openRecordsFragment() {
+    fun openHomeFragment() {
         if (fragmentViewPager.currentItem != 0) {
             fragmentViewPager.currentItem = 0
         }
     }
 
-    fun openAnalyticsFragment() {
+    fun openMusicFragment() {
         if (fragmentViewPager.currentItem != 1) {
             fragmentViewPager.currentItem = 1
         }
     }
 
-    fun openBudgetsFragment() {
+    fun openBrowserFragment() {
         if (fragmentViewPager.currentItem != 2) {
             fragmentViewPager.currentItem = 2
         }
     }
 
-    fun openAccountsFragment() {
+    fun openDownloadsFragment() {
         if (fragmentViewPager.currentItem != 3) {
             fragmentViewPager.currentItem = 3
         }
     }
 
-    fun openCategoriesFragment() {
+    fun openSettingsFragment() {
         if (fragmentViewPager.currentItem != 4) {
             fragmentViewPager.currentItem = 4
         }
@@ -100,21 +100,21 @@ class MotherActivity : GlobalBaseActivity() {
     private fun updateButtonTabSelectionUI(currentItem: Int = fragmentViewPager.currentItem) {
         doSomeVibration(30)
         when (currentItem) {
-            0 -> motherActivityNav.updateTabSelectionUI(MotherActivityNav.Tab.RECORDS_TAB)
-            1 -> motherActivityNav.updateTabSelectionUI(MotherActivityNav.Tab.ANALYTICS_TAB)
-            2 -> motherActivityNav.updateTabSelectionUI(MotherActivityNav.Tab.BUDGETS_TAB)
-            3 -> motherActivityNav.updateTabSelectionUI(MotherActivityNav.Tab.ACCOUNTS_TAB)
-            else -> motherActivityNav.updateTabSelectionUI(MotherActivityNav.Tab.CATEGORIES_TAB)
+            0 -> motherActivityNav.updateTabSelectionUI(MotherActivityNav.Tab.HOME_TAB)
+            1 -> motherActivityNav.updateTabSelectionUI(MotherActivityNav.Tab.MUSIC_TAB)
+            2 -> motherActivityNav.updateTabSelectionUI(MotherActivityNav.Tab.BROWSER_TAB)
+            3 -> motherActivityNav.updateTabSelectionUI(MotherActivityNav.Tab.DOWNLOADS_TAB)
+            else -> motherActivityNav.updateTabSelectionUI(MotherActivityNav.Tab.SETTINGS_TAB)
         }
     }
 
     private fun handleBackPressEvent() {
         safeMotherActivityRef?.let {
             when (fragmentViewPager.currentItem) {
-                1 -> openRecordsFragment()
-                2 -> openAnalyticsFragment()
-                3 -> openBudgetsFragment()
-                4 -> openAccountsFragment()
+                1 -> openHomeFragment()
+                2 -> openMusicFragment()
+                3 -> openBrowserFragment()
+                4 -> openDownloadsFragment()
                 else -> {
                     exitActivityOnDoubleBackPress()
                 }

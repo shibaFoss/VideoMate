@@ -14,11 +14,11 @@ class MotherActivityNav(private val motherActivity: MotherActivity?) {
     private val buttons by lazy {
         motherActivity?.let { safeActivityRef ->
             mapOf(
-                R.id.btn_home_tab to { safeActivityRef.openRecordsFragment() },
-                R.id.btn_music_tab to { safeActivityRef.openAnalyticsFragment() },
-                R.id.btn_browser_tab to { safeActivityRef.openBudgetsFragment() },
-                R.id.btn_downloads_tab to { safeActivityRef.openAccountsFragment() },
-                R.id.btn_settings_tab to { safeActivityRef.openCategoriesFragment() }
+                R.id.btn_home_tab to { safeActivityRef.openHomeFragment() },
+                R.id.btn_music_tab to { safeActivityRef.openMusicFragment() },
+                R.id.btn_browser_tab to { safeActivityRef.openBrowserFragment() },
+                R.id.btn_downloads_tab to { safeActivityRef.openDownloadsFragment() },
+                R.id.btn_settings_tab to { safeActivityRef.openSettingsFragment() }
             )
         }
     }
@@ -37,27 +37,27 @@ class MotherActivityNav(private val motherActivity: MotherActivity?) {
     fun updateTabSelectionUI(tab: Tab) {
         motherActivity?.let { safeActivityRef ->
             val buttonTabs = mapOf(
-                Tab.RECORDS_TAB to listOf(
+                Tab.HOME_TAB to listOf(
                     R.id.btn_home_tab,
                     R.id.img_home_tab,
                     R.id.txt_home_tab
                 ),
-                Tab.ANALYTICS_TAB to listOf(
+                Tab.MUSIC_TAB to listOf(
                     R.id.btn_music_tab,
                     R.id.img_music_tab,
                     R.id.txt_music_tab
                 ),
-                Tab.BUDGETS_TAB to listOf(
+                Tab.BROWSER_TAB to listOf(
                     R.id.btn_browser_tab,
                     R.id.img_browser_tab,
                     R.id.txt_browser_tab
                 ),
-                Tab.ACCOUNTS_TAB to listOf(
+                Tab.DOWNLOADS_TAB to listOf(
                     R.id.btn_downloads_tab,
                     R.id.img_downloads_tab,
                     R.id.txt_downloads_tab
                 ),
-                Tab.CATEGORIES_TAB to listOf(
+                Tab.SETTINGS_TAB to listOf(
                     R.id.btn_settings_tab,
                     R.id.img_settings_tab,
                     R.id.txt_settings_tab
@@ -82,7 +82,7 @@ class MotherActivityNav(private val motherActivity: MotherActivity?) {
                 safeActivityRef.findViewById<TextView>(ids[2])?.let { textTab ->
                     textTab.apply {
                         setTextColor(getColor(context, R.color.color_text_hint))
-                        typeface = getFont(context, R.font.sans_font_regular)
+                        typeface = getFont(context, R.font.sans_font_medium)
                     }
                 }
             }
@@ -113,10 +113,10 @@ class MotherActivityNav(private val motherActivity: MotherActivity?) {
     }
 
     enum class Tab {
-        RECORDS_TAB,
-        ANALYTICS_TAB,
-        BUDGETS_TAB,
-        ACCOUNTS_TAB,
-        CATEGORIES_TAB
+        HOME_TAB,
+        MUSIC_TAB,
+        BROWSER_TAB,
+        DOWNLOADS_TAB,
+        SETTINGS_TAB
     }
 }

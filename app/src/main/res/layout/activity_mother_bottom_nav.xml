@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Bottom Navigation Panel Layout
+    ================================
+    This layout defines the app-wide bottom navigation bar used across major screens.
+    It presents five equal-width tabs (Home, Music, Browser, Downloads, Settings) inside
+    a CardView container to provide elevation, rounded corners, and a background surface.
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,6 +15,10 @@
     android:orientation="vertical"
     tools:ignore="UseCompatTextViewDrawableXml,UseAppTint">
 
+    <!--
+        Card container giving the nav bar a surfaced background, elevation shadow, and rounded corners.
+        Margins left/right provide inset from screen edges; top/bottom tighten vertical spacing.
+    -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,12 +30,19 @@
         app:cardCornerRadius="@dimen/_10"
         app:cardElevation="@dimen/_1">
 
+        <!--
+            Horizontal strip hosting all tab buttons.
+            Uses layout_weight to split width equally across the 5 tabs.
+            baselineAligned = false to avoid extra baseline alignment calculations.
+        -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:baselineAligned="false"
             android:orientation="horizontal">
 
+            <!-- ================= TAB: HOME ================= -->
+            <!-- Active (selected) visual defaults: transparent background; icon/text tinted primary in runtime. -->
             <LinearLayout
                 android:id="@+id/btn_home_tab"
                 android:layout_width="0dp"
@@ -37,6 +55,7 @@
                 android:clickable="true"
                 android:orientation="vertical">
 
+                <!-- Home icon -->
                 <ImageView
                     android:id="@+id/img_home_tab"
                     android:layout_width="wrap_content"
@@ -49,6 +68,7 @@
                     android:tint="@color/color_text_primary"
                     tools:ignore="ImageContrastCheck" />
 
+                <!-- Home label -->
                 <TextView
                     android:id="@+id/txt_home_tab"
                     android:layout_width="match_parent"
@@ -64,6 +84,8 @@
                     tools:ignore="TextContrastCheck" />
             </LinearLayout>
 
+            <!-- ================= TAB: MUSIC ================= -->
+            <!-- Initially inactive; selector drawable manages pressed/selected highlight. -->
             <LinearLayout
                 android:id="@+id/btn_music_tab"
                 android:layout_width="0dp"
@@ -75,6 +97,7 @@
                 android:clickable="true"
                 android:orientation="vertical">
 
+                <!-- Music icon -->
                 <ImageView
                     android:id="@+id/img_music_tab"
                     android:layout_width="wrap_content"
@@ -87,6 +110,7 @@
                     android:tint="@color/color_text_hint"
                     tools:ignore="ImageContrastCheck" />
 
+                <!-- Music label -->
                 <TextView
                     android:id="@+id/txt_music_tab"
                     android:layout_width="match_parent"
@@ -102,6 +126,7 @@
                     tools:ignore="TextContrastCheck" />
             </LinearLayout>
 
+            <!-- ================= TAB: BROWSER ================= -->
             <LinearLayout
                 android:id="@+id/btn_browser_tab"
                 android:layout_width="0dp"
@@ -113,6 +138,7 @@
                 android:clickable="true"
                 android:orientation="vertical">
 
+                <!-- Browser icon -->
                 <ImageView
                     android:id="@+id/img_browser_tab"
                     android:layout_width="wrap_content"
@@ -125,6 +151,7 @@
                     android:tint="@color/color_text_hint"
                     tools:ignore="ImageContrastCheck" />
 
+                <!-- Browser label -->
                 <TextView
                     android:id="@+id/txt_browser_tab"
                     android:layout_width="match_parent"
@@ -140,6 +167,7 @@
                     tools:ignore="TextContrastCheck" />
             </LinearLayout>
 
+            <!-- ================= TAB: DOWNLOADS ================= -->
             <LinearLayout
                 android:id="@+id/btn_downloads_tab"
                 android:layout_width="0dp"
@@ -151,6 +179,7 @@
                 android:clickable="true"
                 android:orientation="vertical">
 
+                <!-- Downloads icon -->
                 <ImageView
                     android:id="@+id/img_downloads_tab"
                     android:layout_width="wrap_content"
@@ -163,6 +192,7 @@
                     android:tint="@color/color_text_hint"
                     tools:ignore="ImageContrastCheck" />
 
+                <!-- Downloads label -->
                 <TextView
                     android:id="@+id/txt_downloads_tab"
                     android:layout_width="match_parent"
@@ -172,12 +202,13 @@
                     android:fontFamily="@font/sans_font_medium"
                     android:gravity="center"
                     android:maxLines="1"
-                    android:text="@string/title_downloads"
+                    android:text="@string/title_tasks"
                     android:textColor="@color/color_text_hint"
                     android:textSize="@dimen/small_text_size"
                     tools:ignore="TextContrastCheck" />
             </LinearLayout>
 
+            <!-- ================= TAB: SETTINGS ================= -->
             <LinearLayout
                 android:id="@+id/btn_settings_tab"
                 android:layout_width="0dp"
@@ -190,6 +221,7 @@
                 android:clickable="true"
                 android:orientation="vertical">
 
+                <!-- Settings icon -->
                 <ImageView
                     android:id="@+id/img_settings_tab"
                     android:layout_width="wrap_content"
@@ -202,6 +234,7 @@
                     android:tint="@color/color_text_hint"
                     tools:ignore="ImageContrastCheck" />
 
+                <!-- Settings label -->
                 <TextView
                     android:id="@+id/txt_settings_tab"
                     android:layout_width="match_parent"
