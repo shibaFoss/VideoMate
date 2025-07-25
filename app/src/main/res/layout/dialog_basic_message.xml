@@ -98,7 +98,7 @@
                         android:fontFamily="@font/sans_font_regular"
                         android:gravity="center"
                         android:maxLines="1"
-                        android:text="@string/cancel"
+                        android:text="@string/title_cancel"
                         android:textColor="@color/color_text_primary"
                         android:textSize="@dimen/normal_text_size" />
                 </RelativeLayout>
@@ -130,7 +130,7 @@
                         android:fontFamily="@font/sans_font_medium"
                         android:gravity="center"
                         android:maxLines="1"
-                        android:text="@string/okay"
+                        android:text="@string/title_okay"
                         android:textColor="@color/color_on_secondary"
                         android:textSize="@dimen/normal_text_size" />
                 </RelativeLayout>
