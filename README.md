@@ -1,5 +1,5 @@
 <div align="center">
-<img  src="others/graphics/logo_full_v3.png"  width=200 height=200  align="center" alt="VideoMate Logo">
+<img  src="app/src/main/res/drawable/ic_app_logo.png"  width=200 height=200  align="center" alt="VideoMate Logo">
 
 # VideoMate Ultimate
 
