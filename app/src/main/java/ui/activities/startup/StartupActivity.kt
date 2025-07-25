@@ -1,7 +1,9 @@
 package ui.activities.startup
 
+import android.widget.TextView
 import core.bases.GlobalBaseActivity
 import kotlinx.coroutines.delay
+import libs.devices.AppVersionUtility
 import libs.process.ThreadsUtility
 import net.base.R
 import ui.activities.mother.MotherActivity
@@ -31,6 +33,7 @@ class StartupActivity : GlobalBaseActivity() {
      * Initiates the timed transition to the main activity after a 2-second delay.
      */
     override fun onAfterLayoutRendered() {
+        showApkVersionInfo()
         ThreadsUtility.executeInBackground(codeBlock = {
             // Display splash screen for minimum 2 seconds
             delay(2000)
@@ -66,5 +69,21 @@ class StartupActivity : GlobalBaseActivity() {
      */
     override fun onDestroyActivity() {
         clearWeakActivityReference()
+    }
+
+
+    /**
+     * Displays the current app version on the splash screen.
+     *
+     * This retrieves the version name from [AppVersionUtility] and sets it to
+     * the [TextView] with ID [R.id.txt_version_info] using a formatted string
+     * from resources.
+     */
+    private fun showApkVersionInfo() {
+        val versionName = AppVersionUtility.versionName
+        findViewById<TextView>(R.id.txt_version_info).text = getString(
+            R.string.text_startup_version_name,
+            versionName
+        )
     }
 }

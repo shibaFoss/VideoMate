@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Dialog layout for changing default language.
+    Includes a header, language options, confirmation button, and restart info.
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +11,7 @@
     android:layout_height="wrap_content"
     tools:ignore="UseAppTint,UseCompatTextViewDrawableXml">
 
+    <!-- Card container for elevated surface with rounded corners -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,12 +28,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!-- Dialog title section with primary background -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/color_primary"
                 android:orientation="vertical">
 
+                <!-- Title text -->
                 <TextView
                     android:id="@+id/txt_dialog_title"
                     android:layout_width="match_parent"
@@ -43,6 +50,7 @@
                     android:textSize="@dimen/normal_text_size" />
             </LinearLayout>
 
+            <!-- Scrollable section for radio button language options -->
             <ScrollView
                 android:id="@+id/languages_section"
                 android:layout_width="match_parent"
@@ -54,6 +62,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
+                    <!-- RadioGroup to hold available language options -->
                     <RadioGroup
                         android:id="@+id/language_options_container"
                         android:layout_width="match_parent"
@@ -68,6 +77,7 @@
                 </LinearLayout>
             </ScrollView>
 
+            <!-- Confirmation button (Apply Changes) -->
             <RelativeLayout
                 android:id="@+id/btn_positive_container"
                 android:layout_width="match_parent"
@@ -81,6 +91,7 @@
                 android:elevation="@dimen/_1"
                 tools:ignore="TouchTargetSizeCheck">
 
+                <!-- Button label with check icon -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -96,6 +107,7 @@
                     android:textSize="@dimen/normal_text_size" />
             </RelativeLayout>
 
+            <!-- Info text showing restart note -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -104,9 +116,9 @@
                 android:layout_marginTop="@dimen/_2"
                 android:layout_marginEnd="@dimen/_15"
                 android:layout_marginBottom="@dimen/_8"
-                android:fontFamily="@font/sans_font_light"
+                android:fontFamily="@font/sans_font_regular"
                 android:text="@string/app_will_restart_to_take_effect"
-                android:textColor="@color/color_text_hint"
+                android:textColor="@color/color_text_primary"
                 android:textSize="@dimen/small_text_size"
                 tools:ignore="TextContrastCheck" />
         </LinearLayout>

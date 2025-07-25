@@ -86,7 +86,7 @@ class ToastViewBuilder(context: Context) : Toast(context) {
 		 * @return A configured [ToastViewBuilder] instance.
 		 */
 		private fun makeText(
-			context: Context, message: CharSequence?, duration: Int = LENGTH_LONG
+			context: Context, message: CharSequence?, duration: Int = LENGTH_SHORT
 		): ToastViewBuilder {
 			return WeakReference(context).get()?.let { safeContext ->
 				configureToastView(safeContext, message, duration)

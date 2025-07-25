@@ -20,9 +20,9 @@
     <string name="images">Images</string>
     <string name="others">Others</string>
     <string name="title_goes_here">Title goes here.</string>
-    <string name="message_goes_here">Message goes here.</string>
-    <string name="okay">Okay</string>
-    <string name="cancel">Cancel</string>
+    <string name="text_message_goes_here">Message goes here.</string>
+    <string name="title_okay">Okay</string>
+    <string name="title_cancel">Cancel</string>
     <string name="sample_text_here">Sample text here.</string>
     <string name="press_back_button_to_exit">Press back once more to exit.</string>
     <string name="send_email">Send Email</string>
@@ -40,5 +40,6 @@
     <string name="title_version">Version</string>
     <string name="text_app_splash_credit">Made with ❤️ in India 🇮🇳</string>
     <string name="title_videos">Videos</string>
+    <string name="text_startup_version_name">Version: %1$s</string>
 
 </resources>

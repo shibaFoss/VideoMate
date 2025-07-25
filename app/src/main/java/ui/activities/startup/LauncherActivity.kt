@@ -6,7 +6,6 @@ import core.bases.GlobalApplicationKeys.FROM_CRASH_HANDLER
 import core.bases.GlobalApplicationKeys.WHERE_DID_YOU_COME_FROM
 import core.bases.GlobalBaseActivity
 import libs.ui.AnimatorUtility.animActivityFade
-import libs.ui.builders.ToastViewBuilder
 import ui.activities.mother.MotherActivity
 import ui.activities.others.UserFeedbackActivity
 import java.lang.ref.WeakReference
@@ -52,11 +51,7 @@ class LauncherActivity : GlobalBaseActivity() {
         if (settingDatabase != null && settingDatabase.hasAppCrashedRecently) {
             launchFeedbackActivity()
         } else {
-            if (settingDatabase?.isPremiumUser == true) {
-                launchMotherActivity()
-            } else {
-                launchStartupActivity()
-            }
+            launchStartupActivity()
         }
     }
 

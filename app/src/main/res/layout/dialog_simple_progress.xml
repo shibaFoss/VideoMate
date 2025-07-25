@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Custom progress dialog layout with animated Lottie loader,
+    a message, and a dismiss button. Styled with custom dimensions,
+    fonts, and material surface principles.
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +12,7 @@
     android:layout_height="wrap_content"
     tools:ignore="UseAppTint,UseCompatTextViewDrawableXml">
 
+    <!-- Card container for elevation, margin, and rounded corner -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,11 +24,13 @@
         app:cardCornerRadius="@dimen/_10"
         app:cardElevation="@dimen/_5">
 
+        <!-- Inner container for dialog contents -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!-- Lottie animation view to show loading animation -->
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/img_progress_circle"
                 android:layout_width="@dimen/_150"
@@ -40,6 +48,7 @@
                 app:lottie_rawRes="@raw/lottie_anim_loading"
                 tools:ignore="ImageContrastCheck,VisualLintBounds" />
 
+            <!-- Message text shown under the animation -->
             <TextView
                 android:id="@+id/txt_progress_info"
                 style="@style/style_dialogs.message"
@@ -52,6 +61,7 @@
                 android:text="@string/sample_text_here"
                 android:textSize="@dimen/message_text_size" />
 
+            <!-- Button container for bottom dismiss/action button -->
             <RelativeLayout
                 android:id="@+id/btn_dialog_positive_container"
                 android:layout_width="match_parent"
@@ -65,6 +75,7 @@
                 android:elevation="@dimen/_2"
                 tools:ignore="TouchTargetSizeCheck">
 
+                <!-- Text button inside container with icon -->
                 <TextView
                     android:id="@+id/btn_dialog_positive"
                     android:layout_width="wrap_content"

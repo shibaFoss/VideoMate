@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+  ================================================
+  CUSTOM DIALOG LAYOUT FOR VIDEOMATE
+  Features:
+  - Material-style CardView with rounded corners
+  - Title bar with dynamic text
+  - Scrollable message area
+  - Dual-action buttons (Cancel/OK)
+  - Responsive design using weight for button distribution
+  ================================================
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/style_dialogs"
@@ -7,6 +19,12 @@
     android:layout_height="wrap_content"
     tools:ignore="UseAppTint,UseCompatTextViewDrawableXml">
 
+    <!--
+      Primary container with Material Card styling
+      - Margins: 5dp horizontal, 10dp vertical
+      - Elevation: 5dp shadow
+      - Corner radius: 10dp
+    -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,11 +36,17 @@
         app:cardCornerRadius="@dimen/_10"
         app:cardElevation="@dimen/_5">
 
+        <!-- Vertical container for dialog content -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!--
+              TITLE SECTION
+              - Background: Primary brand color
+              - Centered bold text with ellipsis for overflow
+            -->
             <LinearLayout
                 android:id="@+id/dialog_title_container"
                 android:layout_width="match_parent"
@@ -44,6 +68,12 @@
                     android:textSize="@dimen/normal_text_size" />
             </LinearLayout>
 
+            <!--
+              SCROLLABLE MESSAGE AREA
+              - Uses weight to fill available space
+              - Auto-links URLs in text
+              - 10dp horizontal margins
+            -->
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -65,6 +95,12 @@
                     android:textSize="@dimen/message_text_size" />
             </ScrollView>
 
+            <!--
+              BUTTON ROW
+              - Horizontal layout with 40%/60% weight distribution
+              - 15dp margins between buttons
+              - Selector backgrounds for pressed states
+            -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -72,6 +108,7 @@
                 android:baselineAligned="true"
                 android:orientation="horizontal">
 
+                <!-- Cancel Button (40% width) -->
                 <RelativeLayout
                     android:id="@+id/btn_dialog_negative_container"
                     android:layout_width="0dp"
@@ -103,6 +140,7 @@
                         android:textSize="@dimen/normal_text_size" />
                 </RelativeLayout>
 
+                <!-- Confirm Button (60% width, elevated) -->
                 <RelativeLayout
                     android:id="@+id/btn_dialog_positive_container"
                     android:layout_width="0dp"

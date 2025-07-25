@@ -3,7 +3,6 @@ package libs.ui
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
 import android.animation.ObjectAnimator.ofFloat
 import android.app.Activity
 import android.content.Context
@@ -1484,8 +1483,8 @@ object ViewUtility {
 	fun View.onBounceBackOnClick(onClick: (View) -> Unit) {
 		this.setOnClickListener { view ->
 			// Create scale down animation for X and Y axis
-			val scaleDownX = ofFloat(view, "scaleX", 0.95f)
-			val scaleDownY = ofFloat(view, "scaleY", 0.95f)
+			val scaleDownX = ofFloat(view, "scaleX", 0.85f)
+			val scaleDownY = ofFloat(view, "scaleY", 0.85f)
 
 			// Create scale up (bounce back) animation for X and Y axis
 			val scaleUpX = ofFloat(view, "scaleX", 1.0f)

@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    A custom-styled RadioButton used for selection interfaces.
+
+    Features:
+    - Uses custom background and button drawable to match app's dark theme.
+    - Tint and font customized for consistent visual identity.
+    - Designed to span the full width and adapt height to content.
+-->
 <RadioButton xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"

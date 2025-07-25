@@ -7,11 +7,19 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat.getColor
 import androidx.core.content.res.ResourcesCompat.getDrawable
 import androidx.core.content.res.ResourcesCompat.getFont
-import libs.ui.ViewUtility.onBounceBackOnClick
 import net.base.R
 
+/**
+ * A utility class that manages the bottom navigation panel in [MotherActivity].
+ * It handles initialization of navigation buttons and updates their UI based on selection.
+ *
+ * @param motherActivity Reference to the parent activity where the navigation is hosted.
+ */
 class MotherActivityNavigation(private val motherActivity: MotherActivity?) {
 
+    /**
+     * Lazily initialized map of button view IDs to their corresponding fragment opening logic.
+     */
     private val buttons by lazy {
         motherActivity?.let { safeActivityRef ->
             mapOf(
@@ -24,17 +32,27 @@ class MotherActivityNavigation(private val motherActivity: MotherActivity?) {
         }
     }
 
+    /**
+     * Initializes the click listeners for the navigation buttons.
+     * Applies a bounce-back animation on press and triggers associated navigation logic.
+     */
     fun initialize() {
         motherActivity?.let { safeActivityRef ->
             buttons?.let { buttons ->
                 buttons.keys.forEach { id ->
                     val view = safeActivityRef.findViewById<View>(id)
-                    view.onBounceBackOnClick { buttons[id]?.invoke() }
+                    view.setOnClickListener{ buttons[id]?.invoke() }
                 }
             }
         }
     }
 
+    /**
+     * Updates the visual appearance of the tab buttons based on the currently selected tab.
+     * This includes changing background, elevation, icon color, and text style.
+     *
+     * @param tab The currently selected [Tab] enum value.
+     */
     fun updateTabSelectionUI(tab: Tab) {
         motherActivity?.let { safeActivityRef ->
             val buttonTabs = mapOf(
@@ -65,6 +83,7 @@ class MotherActivityNavigation(private val motherActivity: MotherActivity?) {
                 )
             )
 
+            // Reset all tab buttons to unselected state
             buttonTabs.values.forEach { ids ->
                 safeActivityRef.findViewById<View>(ids[0])?.let { container ->
                     val bgNegativeSelector = R.drawable.rd_transparent
@@ -77,21 +96,22 @@ class MotherActivityNavigation(private val motherActivity: MotherActivity?) {
 
                 safeActivityRef.findViewById<View>(ids[1])?.let { logoImage ->
                     (logoImage as ImageView).apply {
-                        setColorFilter(getColor(context, R.color.transparent_white), SRC_IN)
+                        setColorFilter(getColor(context, R.color.color_text_hint), SRC_IN)
                     }
                 }
 
                 safeActivityRef.findViewById<TextView>(ids[2])?.let { textTab ->
                     textTab.apply {
-                        setTextColor(getColor(context, R.color.transparent_white))
+                        setTextColor(getColor(context, R.color.color_text_hint))
                         typeface = getFont(context, R.font.sans_font_medium)
                     }
                 }
             }
 
+            // Highlight the selected tab
             buttonTabs[tab]?.let { ids ->
                 safeActivityRef.findViewById<View>(ids[0])?.let { container ->
-                    val bgDrawableResId = R.drawable.rd_secondary
+                    val bgDrawableResId = R.drawable.rd_primary
                     val resources = safeActivityRef.resources
                     val activityTheme = safeActivityRef.theme
                     val buttonBg = getDrawable(resources, bgDrawableResId, activityTheme)
@@ -101,13 +121,13 @@ class MotherActivityNavigation(private val motherActivity: MotherActivity?) {
 
                 safeActivityRef.findViewById<View>(ids[1])?.let { logoImage ->
                     (logoImage as ImageView).apply {
-                        setColorFilter(getColor(context, R.color.color_on_secondary), SRC_IN)
+                        setColorFilter(getColor(context, R.color.color_on_primary), SRC_IN)
                     }
                 }
 
                 safeActivityRef.findViewById<TextView>(ids[2])?.let { textTab ->
                     textTab.apply {
-                        setTextColor(getColor(context, R.color.color_on_secondary))
+                        setTextColor(getColor(context, R.color.color_on_primary))
                         typeface = getFont(context, R.font.sans_font_bold)
                     }
                 }
@@ -115,6 +135,9 @@ class MotherActivityNavigation(private val motherActivity: MotherActivity?) {
         }
     }
 
+    /**
+     * Enum class representing the available tabs in the bottom navigation bar.
+     */
     enum class Tab {
         HOME_TAB,
         MUSIC_TAB,

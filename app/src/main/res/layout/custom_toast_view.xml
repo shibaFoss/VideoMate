@@ -9,25 +9,25 @@
     android:layout_marginEnd="@dimen/_10"
     android:layout_marginBottom="@dimen/_10"
     android:orientation="horizontal"
-    app:cardBackgroundColor="@color/color_surface"
+    app:cardBackgroundColor="@color/color_primary"
     app:cardCornerRadius="@dimen/_10"
-    app:cardElevation="@dimen/_2">
+    app:cardElevation="@dimen/_5">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color_surface"
+        android:background="@color/transparent"
         android:orientation="horizontal">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/image_toast_app_icon"
-            android:layout_width="@dimen/_30"
-            android:layout_height="@dimen/_30"
+            android:layout_width="@dimen/_25"
+            android:layout_height="@dimen/_25"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="@dimen/_10"
-            android:layout_marginTop="@dimen/_5"
+            android:layout_marginTop="@dimen/_3"
             android:layout_marginEnd="@dimen/_0"
-            android:layout_marginBottom="@dimen/_5"
+            android:layout_marginBottom="@dimen/_3"
             android:elevation="@dimen/_0"
             android:importantForAccessibility="no"
             android:src="@mipmap/ic_launcher_round" />
@@ -44,7 +44,7 @@
             android:fontFamily="@font/sans_font_regular"
             android:gravity="center_vertical"
             android:text="@string/sample_text_here"
-            android:textColor="@color/color_text_primary"
+            android:textColor="@color/color_on_primary"
             android:textSize="@dimen/message_text_size" />
     </LinearLayout>
 

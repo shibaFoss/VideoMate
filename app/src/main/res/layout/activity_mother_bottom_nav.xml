@@ -15,7 +15,7 @@
         android:layout_marginTop="@dimen/_5"
         android:layout_marginEnd="@dimen/_10"
         android:layout_marginBottom="@dimen/_5"
-        app:cardBackgroundColor="@color/color_primary"
+        app:cardBackgroundColor="@color/color_background"
         app:cardCornerRadius="@dimen/_15"
         app:cardElevation="@dimen/_1">
 
@@ -34,7 +34,7 @@
                 android:layout_marginTop="@dimen/_5"
                 android:layout_marginBottom="@dimen/_5"
                 android:layout_weight="1"
-                android:background="@drawable/rd_secondary"
+                android:background="@drawable/rd_primary"
                 android:clickable="true"
                 android:elevation="@dimen/_2"
                 android:orientation="vertical">
@@ -49,7 +49,7 @@
                     android:adjustViewBounds="true"
                     android:importantForAccessibility="no"
                     android:src="@drawable/ic_nav_home"
-                    android:tint="@color/color_on_secondary"
+                    android:tint="@color/color_on_primary"
                     tools:ignore="ImageContrastCheck" />
 
                 <!-- Home label -->
@@ -63,7 +63,7 @@
                     android:gravity="center"
                     android:maxLines="1"
                     android:text="@string/title_home"
-                    android:textColor="@color/color_on_secondary"
+                    android:textColor="@color/color_on_primary"
                     android:textSize="@dimen/small_text_size"
                     tools:ignore="TextContrastCheck" />
             </LinearLayout>
@@ -91,7 +91,7 @@
                     android:adjustViewBounds="true"
                     android:importantForAccessibility="no"
                     android:src="@drawable/ic_nav_music"
-                    android:tint="@color/transparent_white"
+                    android:tint="@color/color_text_hint"
                     tools:ignore="ImageContrastCheck" />
 
                 <!-- Music label -->
@@ -105,7 +105,7 @@
                     android:gravity="center"
                     android:maxLines="1"
                     android:text="@string/title_music"
-                    android:textColor="@color/transparent_white"
+                    android:textColor="@color/color_text_hint"
                     android:textSize="@dimen/small_text_size"
                     tools:ignore="TextContrastCheck" />
             </LinearLayout>
@@ -133,7 +133,7 @@
                     android:adjustViewBounds="true"
                     android:importantForAccessibility="no"
                     android:src="@drawable/ic_nav_videos"
-                    android:tint="@color/transparent_white"
+                    android:tint="@color/color_text_hint"
                     tools:ignore="ImageContrastCheck" />
 
                 <!-- Videos label -->
@@ -147,7 +147,7 @@
                     android:gravity="center"
                     android:maxLines="1"
                     android:text="@string/title_videos"
-                    android:textColor="@color/transparent_white"
+                    android:textColor="@color/color_text_hint"
                     android:textSize="@dimen/small_text_size"
                     tools:ignore="TextContrastCheck" />
             </LinearLayout>
@@ -175,7 +175,7 @@
                     android:adjustViewBounds="true"
                     android:importantForAccessibility="no"
                     android:src="@drawable/ic_nav_downloads"
-                    android:tint="@color/transparent_white"
+                    android:tint="@color/color_text_hint"
                     tools:ignore="ImageContrastCheck" />
 
                 <!-- Downloads label -->
@@ -189,7 +189,7 @@
                     android:gravity="center"
                     android:maxLines="1"
                     android:text="@string/title_tasks"
-                    android:textColor="@color/transparent_white"
+                    android:textColor="@color/color_text_hint"
                     android:textSize="@dimen/small_text_size"
                     tools:ignore="TextContrastCheck" />
             </LinearLayout>
@@ -218,7 +218,7 @@
                     android:adjustViewBounds="true"
                     android:importantForAccessibility="no"
                     android:src="@drawable/ic_settings"
-                    android:tint="@color/transparent_white"
+                    android:tint="@color/color_text_hint"
                     tools:ignore="ImageContrastCheck" />
 
                 <!-- Settings label -->
@@ -232,7 +232,7 @@
                     android:gravity="center"
                     android:maxLines="1"
                     android:text="@string/title_settings"
-                    android:textColor="@color/transparent_white"
+                    android:textColor="@color/color_text_hint"
                     android:textSize="@dimen/small_text_size"
                     tools:ignore="TextContrastCheck" />
             </LinearLayout>
