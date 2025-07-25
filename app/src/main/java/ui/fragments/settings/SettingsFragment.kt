@@ -1,27 +1,20 @@
-package ui.fragments.records
+package ui.fragments.settings
 
 import android.os.Bundle
 import android.view.View
-import com.dinuscxj.progressbar.CircleProgressBar
 import core.bases.GlobalBaseFragment
 import net.base.R
 
-class RecordsFragment : GlobalBaseFragment() {
-
+class SettingsFragment : GlobalBaseFragment() {
     override fun getLayoutResId(): Int {
         return R.layout.fragment_base
     }
 
-    override fun onAfterLayoutLoad(layoutView: View, state: Bundle?) {
-        safeFragmentLayoutRef?.apply {
-
-        }
-    }
+    override fun onAfterLayoutLoad(layoutView: View, state: Bundle?) {}
 
     override fun onResumeFragment() {}
 
     override fun onPauseFragment() {}
 
     override fun onDestroyFragment() {}
-
 }

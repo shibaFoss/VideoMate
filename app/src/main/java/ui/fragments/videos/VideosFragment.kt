@@ -1,19 +1,16 @@
-package ui.fragments.accounts
+package ui.fragments.videos
 
 import android.os.Bundle
 import android.view.View
 import core.bases.GlobalBaseFragment
 import net.base.R
 
-class AccountsFragment : GlobalBaseFragment() {
-
+class VideosFragment:GlobalBaseFragment() {
     override fun getLayoutResId(): Int {
         return R.layout.fragment_base
     }
 
-    override fun onAfterLayoutLoad(layoutView: View, state: Bundle?) {
-
-    }
+    override fun onAfterLayoutLoad(layoutView: View, state: Bundle?) {}
 
     override fun onResumeFragment() {}
 

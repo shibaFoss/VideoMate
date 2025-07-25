@@ -4,11 +4,11 @@ import androidx.viewpager.widget.ViewPager
 import core.bases.GlobalBaseActivity
 import libs.ui.builders.CustomOnPageChangeListener
 import net.base.R
-import ui.fragments.records.RecordsFragment
-import ui.fragments.category.CategoriesFragment
-import ui.fragments.accounts.AccountsFragment
-import ui.fragments.budgets.BudgetsFragment
-import ui.fragments.analytics.AnalyticsFragment
+import ui.fragments.home.HomeFragment
+import ui.fragments.settings.SettingsFragment
+import ui.fragments.tasks.TasksFragment
+import ui.fragments.videos.VideosFragment
+import ui.fragments.music.MusicFragment
 import java.lang.ref.WeakReference
 
 class MotherActivity : GlobalBaseActivity() {
@@ -19,11 +19,11 @@ class MotherActivity : GlobalBaseActivity() {
     private lateinit var fragmentViewPager: ViewPager
     private lateinit var motherActivityNavigation: MotherActivityNavigation
 
-    var recordsFragment: RecordsFragment? = null
-    var analyticsFragment: AnalyticsFragment? = null
-    var budgetsFragment: BudgetsFragment? = null
-    var accountsFragment: AccountsFragment? = null
-    var categoriesFragment: CategoriesFragment? = null
+    var homeFragment: HomeFragment? = null
+    var musicFragment: MusicFragment? = null
+    var videosFragment: VideosFragment? = null
+    var tasksFragment: TasksFragment? = null
+    var settingsFragment: SettingsFragment? = null
 
     override fun onRenderingLayout(): Int {
         return R.layout.activity_mother
